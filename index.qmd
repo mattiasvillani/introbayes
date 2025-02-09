@@ -1,0 +1,43 @@
+---
+title: "Intro to Bayes - a one day workshop"
+format: html
+---
+
+<img src="misc/banner_image1.png" alt="AI generated banner image" class="center" width="100%"/>
+
+### Aim
+
+The aim is ...
+
+### Content
+
+- Content 1
+- Content 2
+
+### Literature 
+
+-   Villani, M. (2025). [Bayesian Learning - a gentle introduction](misc/larry.png).
+
+### Workshop plan
+
+**Lecture 1 - TBD**<br>
+Reading: Ch. 1, 2.1-2.4 | Slides<br>
+Widgets: [Bernoulli data - beta prior](https://observablehq.com/@mattiasvillani/bayesian-inference-for-bernoulli-iid-data) | [Gaussian known variance](https://observablehq.com/@mattiasvillani/bayes-iid-gaussian-known-var)
+
+**Lecture 2 - TBD**<br>
+Reading: Ch. 1, 2.1-2.4 | Slides<br>
+Widgets: <br>
+
+**Lecture 3 - TBD**<br>
+Reading: Ch. 1, 2.1-2.4 | Slides<br>
+Widgets: <br>
+
+
+### Lecturer
+
+::: {layout="[ [1,1],[1,1] ]"}
+<img src="/misc/villani_foto.jpg" width="33%"/>\
+[Mattias Villani](https://mattiasvillani.com)<br>
+Professor of Statistics<br>
+Stockholm University
+:::
