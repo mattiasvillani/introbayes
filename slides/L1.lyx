@@ -926,7 +926,6 @@ status open
 
 \begin_deeper
 \begin_layout Standard
-\align center
 \begin_inset Box Boxed
 position "t"
 hor_pos "c"
@@ -971,7 +970,7 @@ literal "true"
 
 \end_layout
 
-\begin_layout Frame
+\begin_layout PlainFrame
 \begin_inset Argument 4
 status open
 

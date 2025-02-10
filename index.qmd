@@ -36,7 +36,7 @@ Statistics<br> Stockholm University
 
 ### Literature
 
--   Villani, M. (2025). [Bayesian Learning](misc/larry.png) (draft, later chapters are work in progress)
+-   Villani, M. (2025). [Bayesian Learning](https://github.com/mattiasvillani/BayesianLearningBook/raw/main/pdf/BayesBook.pdf) (draft, later chapters are work in progress)
 
 ### Workshop plan and schedule
 
@@ -55,7 +55,7 @@ Interactive:
 
 **Lecture 2 - Multi-parameter models, Marginalization, Prior elicitation and Prediction**<br> 
 Time: 10.00-10.50 <br>
-Reading: Ch. 3.1-3.5, Ch.4 and Ch. 6 | Slides<br> 
+Reading: Ch. 3.1-3.5, Ch.4 and Ch. 6 | [Slides](slides/L2.pdf)<br> 
 Interactive: [Scaled inverse-chi2 distribution](https://observablehq.com/@mattiasvillani/scaled-inverse-chi-2-distribution) | 
 [Gaussian model](https://observablehq.com/@mattiasvillani/bayesian-inference-for-gaussian-iid-data) | 
 [Dirichlet distribution](https://observablehq.com/@mattiasvillani/dirichlet-distribution) | 
