@@ -1,0 +1,3291 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+
+
+% you can play with different themes and color themes to find your favorite combination.
+\mode<presentation> {
+  \usetheme{Luebeck}
+  \usecolortheme{beaver}
+  \beamertemplatenavigationsymbolsempty
+ 
+}
+
+\usepackage{mathtools}
+\usepackage{graphicx} % for including images
+\usepackage{pgf} % for logo
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{emoji}
+\usepackage{listings}
+\usepackage[many]{tcolorbox}
+\usepackage{tabularx}
+\usepackage{array}
+\tcbuselibrary{skins}
+\usepackage{pstricks}
+%\usepackage{fdsymbol} % for card symbols
+
+
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\tcbset{tab2/.style={enhanced, fontupper=\small,
+colback=lightgray!10!white,colframe=cobalt!50!black,colbacktitle=lightsteelblue!40!white,
+coltitle=black,center title}}
+
+\newcommand\boldblue[1]{\textcolor{cobalt}{\textbf{#1}}}
+\newcommand\boldorange[1]{\textcolor{burntoranger}{\textbf{#1}}}
+\def\*#1{\mathbf{#1}}
+
+\date{} % Date, can be changed to a custom date
+
+\titlegraphic{
+\vspace{-0.6cm}
+\includegraphics[width=1.5cm]{/misc/LogoBlueJustRing.jpg}\break
+
+
+\tiny
+\vspace{1cm}
+\href{https://mattiasvillani.com}{\includegraphics[width=0.33cm]{/misc/web.png} mattiasvillani.com}\hspace*{1cm}~
+\href{https://twitter.com/matvil}{\includegraphics[width=0.3cm]{/misc/bluesky.png} @matvil}\hspace*{1cm}~
+\href{https://fosstodon.org/@matvil}{\includegraphics[width=0.3cm]{/misc/mastodon.pdf} @matvil}\hspace*{1cm}~
+\href{https://github.com/mattiasvillani}{\includegraphics[width=0.3cm]{/misc/github.png} mattiasvillani}~
+}
+
+
+\definecolor{blue}{RGB}{38, 122, 181}
+\definecolor{orange}{RGB}{255, 128, 0}
+\definecolor{lorange}{RGB}{255, 178, 102}
+\definecolor{llorange}{RGB}{255, 229,204 }
+\definecolor{verylightgray}{RGB}{246, 246, 246}
+\definecolor{cobalt}{HTML}{0047AB}
+\definecolor{lightsteelblue}{HTML}{b0c4de}
+
+\definecolor{bookblue}{HTML}{6C8EBF}
+\definecolor{bookgold}{HTML}{C0A34D}
+\definecolor{bookred}{HTML}{780000}
+
+
+\definecolor{shadecolor}{rgb}{236, 236, 236}
+
+\setbeamertemplate{itemize item}{\color{orange}$\blacksquare$}
+\setbeamertemplate{itemize subitem}{\color{orange}$\blacktriangleright$}
+\usepackage{tcolorbox}
+
+
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\setbeamertemplate{footline}{}
+\end_preamble
+\options xcolor=svgnames
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\boxbgcolor #bfbc40
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\size largest
+\color orange
+Workshop: Intro to Bayesian Learning
+\begin_inset Newline newline
+\end_inset
+
+
+\size default
+Lecture 1 - The Bayesics
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\color gray
+Intro2Bayes workshop
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace{2.7cm}
+\backslash
+insertframenumber/
+\backslash
+inserttotalframenumber
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Mattias Villani
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color gray
+Mattias Villani
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+
+\series bold
+Department of Statistics
+\begin_inset Newline newline
+\end_inset
+
+Stockholm University
+\series default
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Stockholm University
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Overview
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+The likelihood function
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bayes and subjective probability
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bayesian analysis of Bernoulli data
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bayesian analysis of Gaussian data with known variance
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bayesian analysis of Poisson counts
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Likelihood function - Bernoulli trials
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bernoulli trials
+\series default
+\color inherit
+:
+\begin_inset Formula 
+\[
+X_{1},...,X_{n}|\theta\overset{{\normalcolor {\normalcolor \textcolor{red}{iid}}}}{\sim}Bern(\textcolor{red}{\ensuremath{\theta}}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Likelihood
+\series default
+\color inherit
+ from 
+\begin_inset Formula $s=\sum_{i=1}^{n}x_{i}$
+\end_inset
+
+ successes and 
+\begin_inset Formula $f=n-s$
+\end_inset
+
+ failures.
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+p(x_{1},...,x_{n}|\theta) & = & p(x_{1}|\theta)\cdots p(x_{n}|\theta)=\theta^{s}(1-\theta)^{f}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Maximum likelihood estimator
+\series default
+\color inherit
+ 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ maximizes 
+\begin_inset Formula $p(x_{1},...,x_{n}|\theta)$
+\end_inset
+
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Given the data 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+, plot 
+\begin_inset Formula $p(x_{1},...,x_{n}|\theta)$
+\end_inset
+
+ 
+\color red
+as a function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\color inherit
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/BernLiken10s4.pdf
+	lyxscale 40
+	scale 17
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/BernLiken100s40.pdf
+	lyxscale 40
+	scale 17
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/BernLiken10s9.pdf
+	lyxscale 40
+	scale 17
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Uncertainty and subjective probability
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathrm{Pr}$
+\end_inset
+
+
+\begin_inset Formula $(\theta<0.6\vert\text{data})$
+\end_inset
+
+ only makes sense if 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is random.
+ 
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+But 
+\begin_inset Formula $\theta$
+\end_inset
+
+ may be
+\shape italic
+ 
+\shape default
+a fixed natural constant?
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bayesian: doesn't matter if 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is fixed or random
+\series default
+\color inherit
+.
+ 
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Do 
+\series bold
+\color blue
+You
+\series default
+\color inherit
+ know the value of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ or not?
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p(\theta)$
+\end_inset
+
+ reflects Your knowledge/
+\series bold
+\color blue
+uncertainty
+\series default
+\color inherit
+ about 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color orange
+Subjective probability
+\series default
+\color inherit
+.
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The statement 
+\begin_inset Formula $\mathrm{Pr}(10\text{th}\,\text{decimal of }\pi=9)=0.1$
+\end_inset
+
+ makes sense.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/deFinettiBook.jpeg
+	lyxscale 20
+	scale 25
+
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/deFinetti.jpg
+	lyxscale 20
+	scale 90
+
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset space \enskip{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/pi_circle.jpg
+	lyxscale 20
+	scale 12
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Learning from data - Bayes' theorem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+How to 
+\series bold
+\color orange
+update
+\series default
+\color inherit
+ from 
+\series bold
+\color blue
+prior
+\series default
+\color inherit
+ 
+\begin_inset Formula $p(\theta)$
+\end_inset
+
+ to 
+\series bold
+\color blue
+posterior
+\series default
+\color inherit
+ 
+\begin_inset Formula $p(\theta|\mathrm{Data})$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bayes' theorem
+\series default
+\color inherit
+ for events 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p(A|B)=\frac{p(B|A)p(A)}{p(B)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bayes' Theorem for a model parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p(\theta|\mathrm{Data})=\frac{p(\mathrm{Data}|\theta)p(\theta)}{p(\mathrm{Data})}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+It is the prior 
+\begin_inset Formula $p(\theta)$
+\end_inset
+
+ that takes us from 
+\begin_inset Formula $p(\mathrm{Data}|\theta)$
+\end_inset
+
+ to 
+\begin_inset Formula $p(\theta|\mathrm{Data})$
+\end_inset
+
+.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A probability distribution for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is extremely useful.
+ 
+\series bold
+\color orange
+
+\begin_inset Newline newline
+\end_inset
+
+Predictions
+\series default
+\color inherit
+.
+
+\series bold
+\color orange
+ Decision making
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+No prior - no posterior - no useful inferences
+\series default
+ 
+\series bold
+- no fun
+\series default
+\color inherit
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/STM/misc/observable_o_logo.svg
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/STM/misc/observable_o_logo.svg
+	scale 30
+
+\end_inset
+
+ Bayes' theorem for Covid tests
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "1pt"
+separation "1pt"
+shadowsize "4pt"
+framecolor "orange"
+backgroundcolor "white"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+name "\\includegraphics[width=0.65\\textwidth]{figs/bayestheorem_widget.png}"
+target "https://observablehq.com/@mattiasvillani/bayes-theorem-for-events"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Great theorems make great tattoos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bayes theorem
+\begin_inset Formula 
+\[
+p(\theta|Data)=\frac{p(Data|\theta)p(\theta)}{p(Data)}=\frac{p(Data|\theta)p(\theta)}{\int_{\theta}p(Data|\theta)p(\theta)d\theta}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+All you need to know:
+\begin_inset Formula 
+\[
+{\color{orange}p(\theta|Data)\propto p(Data|\theta)p(\theta)}
+\]
+
+\end_inset
+
+or
+\color brown
+
+\begin_inset Formula 
+\[
+\mathbf{{\color{blue}\text{Posterior}\propto\text{ Likelihood }\cdot\text{ Prior}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/BayesTattoo.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bernoulli trials - Beta prior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color orange
+Model
+\series default
+\color inherit
+ 
+\begin_inset Formula 
+\[
+x_{1},...,x_{n}|\theta\overset{iid}{\sim}\mathrm{Bern}(\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color orange
+Prior
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\theta\sim\mathrm{Beta}(\alpha,\beta)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p(\theta)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\theta^{\alpha-1}(1-\theta)^{\beta-1}\text{ \ for }0\leq\theta\leq1\text{.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color orange
+Posterior
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{eqnarray*}
+p(\theta|x_{1},...,x_{n}) & \propto & p(x_{1},...,x_{n}|\theta)p(\theta)\\
+ & \propto & \theta^{s}(1-\theta)^{f}\theta^{\alpha-1}(1-\theta)^{\beta-1}\\
+ & = & \theta^{s+\alpha-1}(1-\theta)^{f+\beta-1}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Posterior is proportional to the 
+\begin_inset Formula ${\color{orange}\mathrm{Beta}(\alpha+s,\beta+f)}$
+\end_inset
+
+ density.
+ 
+\end_layout
+
+\begin_layout Itemize
+The prior-to-posterior mapping:
+\begin_inset Formula 
+\[
+{\color{orange}\theta\sim\mathrm{Beta}(\alpha,\beta)\overset{x_{1},...,x_{n}}{\Longrightarrow}\theta|x_{1},...,x_{n}\sim\mathrm{Beta}(\alpha+s,\beta+f)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Beta distribution 
+\series default
+\color none
+
+\begin_inset space \hspace{}
+\length 5.5cm
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "\\includegraphics[width=0.20\\textwidth]{/home/mv/Dropbox/BayesBook/Figs/observable_badges/dist_beta.pdf}"
+target "https://mattiasvillani.com/BayesianLearningBook/observable/distributions#beta-distribution"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "60col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tcolorbox}[colback=verylightgray] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+smaller      
+\end_layout
+
+\begin_layout Plain Layout
+
+$X 
+\backslash
+sim 
+\backslash
+mathrm{Beta}(
+\backslash
+alpha,
+\backslash
+beta)$ for $X
+\backslash
+in [0,1]$.
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{align*}       
+\end_layout
+
+\begin_layout Plain Layout
+
+	p(x) & = 
+\backslash
+frac{x^{
+\backslash
+alpha-1}(1-x)^{
+\backslash
+beta-1}}{
+\backslash
+mathrm{B}(
+\backslash
+alpha,
+\backslash
+beta)} & 
+\backslash
+
+\backslash
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+mathbb{E}(X) & = 
+\backslash
+frac{
+\backslash
+alpha}{
+\backslash
+alpha+
+\backslash
+beta} & 
+\backslash
+
+\backslash
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+mathbb{V}(X) & = 
+\backslash
+frac{
+\backslash
+alpha
+\backslash
+beta}{(
+\backslash
+alpha+
+\backslash
+beta)^2(
+\backslash
+alpha+
+\backslash
+beta+1)} &     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{align*}     
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathrm{B}(
+\backslash
+alpha,
+\backslash
+beta)=
+\backslash
+frac{
+\backslash
+Gamma(
+\backslash
+alpha)
+\backslash
+Gamma(
+\backslash
+beta)}{
+\backslash
+Gamma(
+\backslash
+alpha+
+\backslash
+beta)}$ 
+\backslash
+
+\backslash
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Gamma(
+\backslash
+alpha)$ is the Gamma function.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tcolorbox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "20col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/BetaDist.pdf
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Spam data (n=10) - Prior is influential
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/SpamBern_n10.pdf
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Spam data (n=100) - Prior is less influential
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/SpamBern_n100.pdf
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Spam data (n=4601) - Prior does not matter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/SpamBernAll.pdf
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/STM/misc/observable_o_logo.svg
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/STM/misc/observable_o_logo.svg
+	scale 30
+
+\end_inset
+
+ Bernoulli model - Beta prior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "1pt"
+separation "1pt"
+shadowsize "4pt"
+framecolor "orange"
+backgroundcolor "white"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+name "\\includegraphics[width=0.65\\textwidth]{figs/bern_beta_widget.png}"
+target "https://observablehq.com/@mattiasvillani/bayesian-inference-for-bernoulli-iid-data#datatext"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Normal data, known variance - uniform prior
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Model
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+x_{1},...,x_{n}|\theta,\sigma^{2}\overset{iid}{\sim}N(\theta,\sigma^{2}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Prior
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+p(\theta)\propto c\text{ (a constant)}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Likelihood
+\series default
+\color inherit
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+p(x_{1},...,x_{n}|\theta,\sigma^{2}) & = & \Pi_{i=1}^{n}(2\pi\sigma^{2})^{-1/2}\exp\left[-\frac{1}{2\sigma^{2}}(x_{i}-\theta)^{2}\right]\\
+ & \propto & \exp\left[-\frac{1}{2(\sigma^{2}/n)}(\theta-\bar{x})^{2}\right].
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Posterior
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\theta|x_{1},...,x_{n}\sim N(\bar{x},\sigma^{2}/n)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Normal data, known variance - normal prior
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Prior
+\series default
+\color inherit
+ 
+\begin_inset Formula 
+\[
+\theta\sim N(\mu_{0},\tau_{0}^{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Posterior
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{eqnarray*}
+p(\theta|x_{1},...,x_{n}) & \propto & p(x_{1},...,x_{n}|\theta,\sigma^{2})p(\theta)\\
+ & \propto & N(\theta|\mu_{n},\tau_{n}^{2}),
+\end{eqnarray*}
+
+\end_inset
+
+where
+\begin_inset Formula 
+\[
+\frac{1}{\tau_{n}^{2}}=\frac{n}{\sigma^{2}}+\frac{1}{\tau_{0}^{2}},
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mu_{n}=w\bar{x}+(1-w)\mu_{0},
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+w=\frac{\frac{n}{\sigma^{2}}}{\frac{n}{\sigma^{2}}+\frac{1}{\tau_{0}^{2}}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Normal data, known variance - normal prior
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Formula $\theta\sim N(\mu_{0},\tau_{0}^{2})\overset{x_{1},...,x_{n}}{\Longrightarrow}\theta|x\sim N(\mu_{n},\tau_{n}^{2}).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\color blue
+Posterior precision = Data precision + Prior precision
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Posterior mean =
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\frac{{\normalcolor \text{Data precision}}}{{\normalcolor \text{Posterior precision}}}$
+\end_inset
+
+
+\color blue
+(Data mean)
+\color inherit
+ 
+\color blue
++ 
+\color inherit
+
+\begin_inset Formula ${\normalcolor \frac{\text{Prior precision}}{\text{Posterior precision}}}$
+\end_inset
+
+
+\color blue
+(Prior mean) 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Internet speed
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Problem
+\series default
+\color inherit
+: My internet provider promises an average download speed of at least 20
+ Mbit/sec.
+ Are they lying?
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Data
+\series default
+\color inherit
+: 
+\begin_inset Formula $\mbox{x}=(15.77,20.5,8.26,14.37,21.09)$
+\end_inset
+
+ Mbit/sec.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Model
+\series default
+\color inherit
+: 
+\begin_inset Formula $X_{1},...,X_{5}\sim N(\theta,\sigma^{2})$
+\end_inset
+
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Assume 
+\begin_inset Formula $\sigma=5$
+\end_inset
+
+ (measurements can vary 
+\begin_inset Formula $\pm10$
+\end_inset
+
+MBit with 95% probability)
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+My 
+\series bold
+\color blue
+prior
+\series default
+\color inherit
+: 
+\begin_inset Formula $\theta\sim N(20,5^{2})$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Internet speed n=1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/WiFi_n1.pdf
+	lyxscale 30
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Internet speed n=2
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/WiFi_n2.pdf
+	lyxscale 30
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Internet speed n=5
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/WiFi_n5.pdf
+	lyxscale 30
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bayesian updating
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/wifiUpdating.pdf
+	lyxscale 30
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/STM/misc/observable_o_logo.svg
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/STM/misc/observable_o_logo.svg
+	scale 30
+
+\end_inset
+
+ Normal model known variance - normal prior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "1pt"
+separation "1pt"
+shadowsize "4pt"
+framecolor "orange"
+backgroundcolor "white"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+name "\\includegraphics[width=0.65\\textwidth]{figs/normal_bayes_widget.png}"
+target "https://observablehq.com/@mattiasvillani/bayes-iid-gaussian-known-var"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Poisson model
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Model
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+y_{1},...,y_{n}\vert\theta\overset{iid}{\sim}\mathrm{Pois}(\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Poisson distribution
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+p(y)=\text{\frac{\theta^{y}e^{-\theta}}{y!}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Likelihood
+\series default
+\color inherit
+ from iid Poisson sample
+\shape italic
+ 
+\shape default
+
+\begin_inset Formula $y=(y_{1},...,y_{n})$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p(y|\theta)=\left[\prod\nolimits _{i=1}^{n}p(y_{i}|\theta)\right]\propto\theta^{(\sum\nolimits _{i=1}^{n}y_{i})}\exp(-\theta n),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Prior
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+p(\theta)\propto\theta^{\alpha-1}\exp(-\theta\beta)\propto\mathrm{Gamma}(\alpha,\beta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Poisson distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+small
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tcolorbox}[colback=verylightgray] 
+\end_layout
+
+\begin_layout Plain Layout
+
+$X 
+\backslash
+sim 
+\backslash
+mathrm{Pois}(
+\backslash
+theta)$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+for $X
+\backslash
+in{0,1,2,
+\backslash
+ldots}$     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{align*}       
+\end_layout
+
+\begin_layout Plain Layout
+
+	p(x) & = 
+\backslash
+frac{
+\backslash
+theta^xe^{-
+\backslash
+theta}}{x!} & 
+\backslash
+
+\backslash
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+mathbb{E}(X) & = 
+\backslash
+theta & 
+\backslash
+
+\backslash
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+mathbb{V}(X) & = 
+\backslash
+theta & 
+\backslash
+
+\backslash
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{align*}     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1cm}   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tcolorbox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "25col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/PoisDist.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Gamma distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+small
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tcolorbox}[colback=verylightgray]   
+\end_layout
+
+\begin_layout Plain Layout
+
+$X 
+\backslash
+sim 
+\backslash
+mathrm{Gamma}(
+\backslash
+alpha,
+\backslash
+beta)$ 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{align*}      
+\end_layout
+
+\begin_layout Plain Layout
+
+	p(x) & = 
+\backslash
+frac{
+\backslash
+beta^
+\backslash
+alpha}{
+\backslash
+Gamma(
+\backslash
+alpha)}x^{
+\backslash
+alpha-1}e^{-
+\backslash
+beta x} & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+mathbb{E}(X) & = 
+\backslash
+frac{
+\backslash
+alpha}{
+\backslash
+beta} & 
+\backslash
+
+\backslash
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+mathbb{V}(X) & = 
+\backslash
+frac{
+\backslash
+alpha}{
+\backslash
+beta^2} & 
+\backslash
+
+\backslash
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{align*}    
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-1cm}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tcolorbox}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "25col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/GammaDist.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Poisson posterior
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Posterior
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{eqnarray*}
+p(\theta|y_{1},...,y_{n}) & \propto & \left[\prod\nolimits _{i=1}^{n}p(y_{i}|\theta)\right]p(\theta)\\
+ & \propto & \theta^{\sum\nolimits _{i=1}^{n}y_{i}}\exp(-\theta n)\theta^{\alpha-1}\exp(-\theta\beta)\\
+ & = & \theta^{\alpha+\sum\nolimits _{i=1}^{n}y_{i}-1}\exp[-\theta(\beta+n)],
+\end{eqnarray*}
+
+\end_inset
+
+which is proportional to 
+\begin_inset Formula $\mathrm{Gamma}(\alpha+\sum\nolimits _{i=1}^{n}y_{i},\beta+n)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Prior-to-Posterior mapping
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{gather*}
+\text{Model: \ }y_{1},...,y_{n}|\theta\overset{iid}{\sim}\mathrm{Pois}(\theta)\\
+\text{Prior: \ }\theta\sim\mathrm{Gamma}(\alpha,\beta)\\
+\text{Posterior: }\theta|y_{1},...,y_{n}\sim\mathrm{Gamma}(\alpha+\sum\nolimits _{i=1}^{n}y_{i},\beta+n)\text{.}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Example - Number of bids in eBay auctions
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Data
+\series default
+\color inherit
+: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Number of placed bids in 
+\begin_inset Formula $n=1000$
+\end_inset
+
+ eBay coin auctions.
+\end_layout
+
+\begin_layout Itemize
+Sum of counts: 
+\begin_inset Formula $\sum_{i=1}^{n}y_{i}=3635.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Average number bids per auction: 
+\begin_inset Formula $\bar{y}=3635/1000=3.635.$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Prior
+\series default
+\color inherit
+: 
+\begin_inset Formula $\alpha=2$
+\end_inset
+
+, 
+\begin_inset Formula $\beta=1/2$
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\[
+E(\theta)=\frac{\alpha}{\beta}=4
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+SD(\theta)=\frac{\alpha}{\beta^{2}}=2.823
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Posterior
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+E(\theta|\boldsymbol{y})=\frac{\alpha+\sum\nolimits _{i=1}^{n}y_{i}}{\beta+n}=\frac{2+3635}{1/2+1000}\approx3.635.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+SD(\theta|\boldsymbol{y})=\left(\frac{\alpha+\sum\nolimits _{i=1}^{n}y_{i}}{(\beta+n)^{2}}\right)^{1/2}\approx0.060.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+eBay data - Posterior of 
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/eBayPriorPost.png
+	scale 33
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/STM/misc/observable_o_logo.svg
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/STM/misc/observable_o_logo.svg
+	scale 30
+
+\end_inset
+
+ Poisson model - Gamma prior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "1pt"
+separation "1pt"
+shadowsize "4pt"
+framecolor "orange"
+backgroundcolor "white"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+name "\\includegraphics[width=0.65\\textwidth]{figs/poisson_bayes_widget.png}"
+target "https://observablehq.com/@mattiasvillani/bayesian-inference-for-iid-poisson-counts#datatext"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bayesian point estimates
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bayes gives a whole 
+\series bold
+\color blue
+posterior
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+distribution
+\series default
+\color inherit
+.
+ Contains all info.
+ 
+\end_layout
+
+\begin_layout Itemize
+With many parameters: convenient to summarize by a 
+\series bold
+\color blue
+point estimate
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Posterior 
+\series bold
+\color blue
+mean
+\series default
+\color inherit
+ (quadratic loss)
+\end_layout
+
+\begin_layout Itemize
+Posterior 
+\series bold
+\color blue
+median
+\series default
+\color inherit
+ (linear loss)
+\end_layout
+
+\begin_layout Itemize
+Posterior 
+\series bold
+\color blue
+mode
+\series default
+\color inherit
+ (zero-one loss)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A 95% Bayesian 
+\series bold
+\color blue
+posterior credible interval
+\series default
+\color inherit
+ 
+\begin_inset Formula $[l,u]$
+\end_inset
+
+ for a parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ given some data 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ is an interval that contains 95% of the posterior probability mass:
+\begin_inset Formula 
+\[
+\mathrm{\mathrm{Pr}(l\leq\theta\leq u\vert)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/STM/misc/observable_o_logo.svg
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/STM/misc/observable_o_logo.svg
+	scale 30
+
+\end_inset
+
+ Bayesian credible intervals
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "1pt"
+separation "1pt"
+shadowsize "4pt"
+framecolor "orange"
+backgroundcolor "white"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+name "\\includegraphics[width=0.65\\textwidth]{figs/hpd_widget.png}"
+target "https://observablehq.com/@mattiasvillani/bayesian-credible-intervals#anchor"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

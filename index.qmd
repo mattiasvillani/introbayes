@@ -1,43 +1,96 @@
 ---
 title: "Intro to Bayes - a one day workshop"
 format: html
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 <img src="misc/banner_image1.png" alt="AI generated banner image" class="center" width="100%"/>
 
 ### Aim
 
-The aim is ...
+The aim of this one-day workshop is to introduce:
 
-### Content
+- the basics of Bayesian statistics though some simple models
+- the Bayesian approach to prediction and decision making
+- approximation and sampling algorithms for posterior inference
+- Bayesian regression and classification 
+- probabilistic programming in Stan and Turing that will allow the user to tackle serious real-world problems with ease.
 
-- Content 1
-- Content 2
+The treatment of each topic will necessarily be more brief than I would like to, but the partipants can dig deeper by:
 
-### Literature 
+- reading in the book suggested below
 
--   Villani, M. (2025). [Bayesian Learning - a gentle introduction](misc/larry.png).
+- experiment with the [extra material](#extras) provided below
 
-### Workshop plan
-
-**Lecture 1 - TBD**<br>
-Reading: Ch. 1, 2.1-2.4 | Slides<br>
-Widgets: [Bernoulli data - beta prior](https://observablehq.com/@mattiasvillani/bayesian-inference-for-bernoulli-iid-data) | [Gaussian known variance](https://observablehq.com/@mattiasvillani/bayes-iid-gaussian-known-var)
-
-**Lecture 2 - TBD**<br>
-Reading: Ch. 1, 2.1-2.4 | Slides<br>
-Widgets: <br>
-
-**Lecture 3 - TBD**<br>
-Reading: Ch. 1, 2.1-2.4 | Slides<br>
-Widgets: <br>
-
+- follow along in the material for my two courses:
+  - [Bayesian Learning. 7.5 credits](https://github.com/mattiasvillani/BayesLearnCourse) 
+  - [Advanced Bayesian Learning, 8 credits](https://github.com/mattiasvillani/AdvBayesLearnCourse) 
 
 ### Lecturer
 
-::: {layout="[ [1,1],[1,1] ]"}
-<img src="/misc/villani_foto.jpg" width="33%"/>\
-[Mattias Villani](https://mattiasvillani.com)<br>
-Professor of Statistics<br>
-Stockholm University
-:::
+<img src="/misc/villani_foto.jpg" width="15%"/>\
+[Mattias Villani](https://mattiasvillani.com)<br> Professor of
+Statistics<br> Stockholm University
+
+### Literature
+
+-   Villani, M. (2025). [Bayesian Learning](misc/larry.png) (draft, later chapters are work in progress)
+
+### Workshop plan and schedule
+
+---
+
+**Lecture 1 - The Bayesics**<br>
+Time: 9.00-9.50 <br>
+Reading: Ch. 1, 2.1-2.4 | [Slides](slides/L1.pdf) <br>
+Interactive: 
+[Beta distribution](https://observablehq.com/@mattiasvillani/beta-distribution) |
+[Bernoulli data - beta prior](https://observablehq.com/@mattiasvillani/bayesian-inference-for-bernoulli-iid-data) | 
+[Gaussian known variance](https://observablehq.com/@mattiasvillani/bayes-iid-gaussian-known-var) |
+[Poisson model](https://observablehq.com/@mattiasvillani/bayesian-inference-for-iid-poisson-counts) | 
+[Exponential model](https://observablehq.com/@mattiasvillani/bayesian-inference-for-exponential-iid-data) |
+[Credible intervals](https://observablehq.com/@mattiasvillani/bayesian-credible-intervals)
+
+**Lecture 2 - Multi-parameter models, Marginalization, Prior elicitation and Prediction**<br> 
+Time: 10.00-10.50 <br>
+Reading: Ch. 3.1-3.5, Ch.4 and Ch. 6 | Slides<br> 
+Interactive: [Scaled inverse-chi2 distribution](https://observablehq.com/@mattiasvillani/scaled-inverse-chi-2-distribution) | 
+[Gaussian model](https://observablehq.com/@mattiasvillani/bayesian-inference-for-gaussian-iid-data) | 
+[Dirichlet distribution](https://observablehq.com/@mattiasvillani/dirichlet-distribution) | 
+[Multinomial model](https://observablehq.com/@mattiasvillani/multinomial-dirichlet) | 
+[Prior predictive Poisson model](https://observablehq.com/@mattiasvillani/prior_pred_poismodel)
+
+☕ *coffee*
+
+**Lecture 3 - Bayesian Regression and Regularization**<br> 
+Time: 11.10-12.00 <br>
+Reading: Ch. 5 and Ch. 12 | Slides<br> 
+Interactive: [Linear regression](https://observablehq.com/@mattiasvillani/bayesian-linear-regression-bike-share-data)
+
+🍲 *lunch* 
+
+**Lecture 4 - Bayesian Classification and Posterior Approximation**<br> 
+Time: 13.00-13.50 <br>
+Reading: Ch. 7 and Ch. 8 | Slides<br> 
+Interactive:
+
+**Lecture 5 - Introduction to Gibbs sampling, MCMC and HMC**<br> 
+Time: 14.00-14.50 <br>
+Reading: Ch. 9 and Ch. 10 (very incomplete) | Slides<br>
+Interactive: [Gibbs sampling when parameters are very correlated](https://www.youtube.com/watch?v=IGiQOCX9UbM&ab_channel=Red15) | [Metropolis-Hastings vs HMC](https://www.youtube.com/watch?v=Vv3f0QNWvWQ&ab_channel=DavidDuvenaud)
+
+☕ *coffee*
+
+**Lecture 6 - Implementing Bayesian Learning with Probabilistic Programming**<br> 
+Time: 15.10-16.00 <br>
+Reading: Ch. 1, 2.1-2.4 | Slides<br> 
+
+### Extras <a name="extras"></a>
+
+Interactive: [Bayes' theorem for events](https://observablehq.com/@mattiasvillani/bayes-theorem-for-events) |
+[Frequentist coverage of credible intervals](https://observablehq.com/@mattiasvillani/coverage-of-confidence-intervals-for-a-proportion) | 
+[Normal approximation for Beta model](https://observablehq.com/@mattiasvillani/posterior-approximation-beta-model) |
+[Bayesian hypothesis testing](https://observablehq.com/@mattiasvillani/bayesian-test-mean-normal-pop)
+

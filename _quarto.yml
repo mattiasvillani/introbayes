@@ -9,22 +9,19 @@ knitr:
   #output-dir: docs
 
 website:
-  title: "Intro to Bayes"
-  favicon: /misc/Thomas_Bayes.gif
+  #title: "Intro to Bayes"
+  #favicon: /misc/Thomas_Bayes.gif
   navbar:
-    logo: /misc/Thomas_Bayes.gif
+    #logo: /misc/Thomas_Bayes.gif
     background: primary
     left:
       - href: index.qmd
         text: Home
         
   page-footer:
-    left:
-      - text: "Intro to Bayes"
-        href: https://www.su.se/statistiska-institutionen/
     center:
-      - text: "Statistisk översiktskurs, 7.5 hp"
-        #href: stealourcourse.qmd
+      - text: "Intro to Bayes"       
+      #href: stealourcourse.qmd
     right:
       - icon: github
         href: https://github.com/mattiasvillani/introbayes
@@ -32,8 +29,8 @@ website:
 format:
   html:
     theme:
-      light: lumen
       dark: superhero # litera, lumen, superhero, united
+      light: lumen
     css: styles.css
     toc: true
     toc-title: Sections
