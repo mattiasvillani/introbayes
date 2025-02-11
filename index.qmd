@@ -73,7 +73,7 @@ Interactive: [Linear regression](https://observablehq.com/@mattiasvillani/bayesi
 
 **Lecture 4 - Bayesian Classification and Posterior Approximation**<br> 
 Time: 13.00-13.50 <br>
-Reading: Ch. 7 and Ch. 8 | Slides<br> 
+Reading: Ch. 7 and Ch. 8 | [Slides](slides/L4.pdf)<br>  
 Interactive:
 
 **Lecture 5 - Introduction to Gibbs sampling, MCMC and HMC**<br> 
