@@ -1681,7 +1681,7 @@ Prediction by simulation
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_deeper
@@ -1914,10 +1914,6 @@ a_{\mathrm{opt}}=\mathrm{argmax}{}_{a\in\mathcal{A}}\text{ }\mathbb{E}_{p(\theta
 \begin_inset Separator parbreak
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 

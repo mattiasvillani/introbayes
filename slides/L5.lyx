@@ -170,7 +170,7 @@ Workshop: Intro to Bayesian Learning
 
 
 \size default
-Lecture 2 - Multi-parameter models, Marginalization, Priors and Prediction
+Lecture 5 - Introduction to Gibbs sampling, MCMC and HMC
 \begin_inset Argument 1
 status open
 
@@ -280,56 +280,12 @@ Overview
 
 \series bold
 \color blue
-The likelihood function
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-\color blue
-Bayes and subjective probability
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-\color blue
-Bayesian analysis of Bernoulli data
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-\color blue
-Bayesian analysis of Gaussian data with known variance
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-\color blue
-Bayesian analysis of Poisson counts
+bla
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator plain
+\begin_inset Separator parbreak
 \end_inset
 
 
@@ -343,9 +299,13 @@ status open
 
 \series bold
 \color orange
-Likelihood function - Bernoulli trials
+Learning the optimal shrinkage
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -353,16 +313,74 @@ Likelihood function - Bernoulli trials
 
 \begin_deeper
 \begin_layout Itemize
+Cross-validation is often used to determine 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bayesian: 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is 
+\series bold
+\color blue
+unknown
+\series default
+\color inherit
+
+\begin_inset Formula $\;\Rightarrow\;$
+\end_inset
+
 
 \series bold
 \color blue
-Bernoulli trials
+use a prior
 \series default
 \color inherit
-:
+ for 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lambda^{-1}\sim\mathrm{Inv\text{-}}\chi^{2}(\omega_{0},\psi_{0}^{2})$
+\end_inset
+
+.
+ The user specifies 
+\begin_inset Formula $\omega_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi_{0}^{2}.$
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Joint posterior 
 \begin_inset Formula 
 \[
-X_{1},...,X_{n}|\theta\overset{{\normalcolor {\normalcolor \textcolor{red}{iid}}}}{\sim}Bern(\textcolor{red}{\ensuremath{\theta}}).
+p(\beta,\sigma^{2},\lambda\vert\boldsymbol{y},\boldsymbol{X})
 \]
 
 \end_inset
@@ -371,45 +389,8 @@ X_{1},...,X_{n}|\theta\overset{{\normalcolor {\normalcolor \textcolor{red}{iid}}
 \end_layout
 
 \begin_layout Itemize
-
-\series bold
-\color blue
-Likelihood
-\series default
-\color inherit
- from 
-\begin_inset Formula $s=\sum_{i=1}^{n}x_{i}$
-\end_inset
-
- successes and 
-\begin_inset Formula $f=n-s$
-\end_inset
-
- failures.
- 
-\begin_inset Formula 
-\begin{eqnarray*}
-p(x_{1},...,x_{n}|\theta) & = & p(x_{1}|\theta)\cdots p(x_{n}|\theta)=\theta^{s}(1-\theta)^{f}
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-\color blue
-Maximum likelihood estimator
-\series default
-\color inherit
- 
-\begin_inset Formula $\hat{\theta}$
-\end_inset
-
- maximizes 
-\begin_inset Formula $p(x_{1},...,x_{n}|\theta)$
+Marginal posterior 
+\begin_inset Formula $\lambda$
 \end_inset
 
 .
@@ -420,59 +401,43 @@ Maximum likelihood estimator
 \end_layout
 
 \begin_layout Itemize
-Given the data 
-\begin_inset Formula $x_{1},...,x_{n}$
-\end_inset
+Gibbs sampling
+\end_layout
 
-, plot 
-\begin_inset Formula $p(x_{1},...,x_{n}|\theta)$
-\end_inset
-
- 
-\color red
-as a function of 
-\begin_inset Formula $\theta$
-\end_inset
-
-
-\color inherit
-.
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\begin_inset VSpace medskip
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
 \end_inset
 
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Learning the optimal shrinkage
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/BernLiken10s4.pdf
-	lyxscale 40
-	scale 17
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/BernLiken100s40.pdf
-	lyxscale 40
-	scale 17
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/BernLiken10s9.pdf
-	lyxscale 40
-	scale 17
+	filename /home/mv/Dropbox/Teaching/Guest/KTH_BayesReg/ridgelearn.png
+	scale 35
 
 \end_inset
 
@@ -484,6 +449,10 @@ as a function of
 \begin_inset Separator parbreak
 \end_inset
 
+
+\end_layout
+
+\begin_layout Frame
 
 \end_layout
 

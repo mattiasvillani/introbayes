@@ -63,20 +63,21 @@ coltitle=black,center title}}
 \definecolor{verylightgray}{RGB}{246, 246, 246}
 \definecolor{cobalt}{HTML}{0047AB}
 \definecolor{lightsteelblue}{HTML}{b0c4de}
-
+\definecolor{darkgreen}{RGB}{17, 59, 8}
 \definecolor{bookblue}{HTML}{6C8EBF}
 \definecolor{bookgold}{HTML}{C0A34D}
 \definecolor{bookred}{HTML}{780000}
-
-
 \definecolor{shadecolor}{rgb}{236, 236, 236}
+
+
 
 \setbeamertemplate{itemize item}{\color{orange}$\blacksquare$}
 \setbeamertemplate{itemize subitem}{\color{orange}$\blacktriangleright$}
 \usepackage{tcolorbox}
 
 
-
+\newcommand{\bbeta}{\boldsymbol{\beta}}
+\renewcommand{\v}[1]{\boldsymbol{#1}}
 \newcommand\blfootnote[1]{%
   \begingroup
   \renewcommand\thefootnote{}\footnote{#1}%
@@ -170,7 +171,7 @@ Workshop: Intro to Bayesian Learning
 
 
 \size default
-Lecture 2 - Multi-parameter models, Marginalization, Priors and Prediction
+Lecture 3 - Bayesian Regression and Regularization
 \begin_inset Argument 1
 status open
 
@@ -280,7 +281,7 @@ Overview
 
 \series bold
 \color blue
-The likelihood function
+Bayesian linear regression
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -291,45 +292,12 @@ The likelihood function
 
 \series bold
 \color blue
-Bayes and subjective probability
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-\color blue
-Bayesian analysis of Bernoulli data
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-\color blue
-Bayesian analysis of Gaussian data with known variance
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-\color blue
-Bayesian analysis of Poisson counts
+Regularization priors
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator plain
+\begin_inset Separator parbreak
 \end_inset
 
 
@@ -343,7 +311,1440 @@ status open
 
 \series bold
 \color orange
-Likelihood function - Bernoulli trials
+Linear regression
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Linear Gaussian regression
+\begin_inset Formula 
+\[
+y_{i}=\boldsymbol{x}_{i}^{\top}\boldsymbol{\beta}+\varepsilon_{i},\quad\varepsilon_{i}\overset{\mathrm{iid}}{\sim}N(0,\sigma^{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The linear regression model in 
+\series bold
+\color blue
+matrix form
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\underset{(n\times1)}{\mathbf{y}}=\underset{(n\times k)(k\times1)}{\mathbf{X}\boldsymbol{\beta}}+\underset{(n\times1)}{\boldsymbol{\varepsilon}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\mathbf{y} & = & \left(\begin{array}{c}
+y_{1}\\
+\vdots\\
+y_{n}
+\end{array}\right)\quad\mathbf{X}=\left(\begin{array}{c}
+\mathbf{x}_{1}^{\top}\\
+\vdots\\
+\mathbf{x}_{n}^{\top}
+\end{array}\right)\quad\boldsymbol{\beta}=\left(\begin{array}{c}
+\beta_{1}\\
+\vdots\\
+\beta_{k}
+\end{array}\right)\quad\boldsymbol{\varepsilon}=\left(\begin{array}{c}
+\varepsilon_{1}\\
+\vdots\\
+\varepsilon_{n}
+\end{array}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Usually 
+\begin_inset Formula $x_{i1}=1$
+\end_inset
+
+, for all 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+ is the intercept.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Likelihood
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\mathbf{y}|\boldsymbol{\beta},\sigma^{2},\mathbf{X}\sim N(\mathbf{X}\boldsymbol{\beta},\sigma^{2}\boldsymbol{I}_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Posterior in linear regression - uniform prior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}   
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{tcolorbox}[colback=verylightgray]     
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+textbf{
+\backslash
+textcolor{darkgreen}{Gaussian linear regression with non-informative prior}}
+  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	   
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+textbf{Model}:
+\backslash
+hspace{0.5cm} $
+\backslash
+mathbf{y} = 
+\backslash
+mathbf{X}
+\backslash
+bbeta + 
+\backslash
+boldsymbol{
+\backslash
+varepsilon},
+\backslash
+quad 
+\backslash
+boldsymbol{
+\backslash
+varepsilon} 
+\backslash
+,{
+\backslash
+sim}
+\backslash
+,
+\backslash
+mathrm{N}(0,
+\backslash
+sigma^2I_n)$ 
+\backslash
+vspace{0.2cm}
+\backslash
+
+\backslash
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+textbf{Prior}:
+\backslash
+hspace{0.78cm} $p(
+\backslash
+bbeta,
+\backslash
+sigma^2) 
+\backslash
+propto 1/
+\backslash
+sigma^2 $ 
+\backslash
+vspace{0.2cm} 
+\backslash
+
+\backslash
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+textbf{Posterior}:
+\backslash
+vspace{-0.5cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+begin{align*}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+bbeta | 
+\backslash
+sigma^2, 
+\backslash
+mathbf{y},
+\backslash
+mathbf{X} &
+\backslash
+sim      
+\backslash
+mathrm{N}(
+\backslash
+hat 
+\backslash
+bbeta,
+\backslash
+sigma^2(
+\backslash
+mathbf{X}^
+\backslash
+top
+\backslash
+mathbf{X})^{-1}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+sigma^2 | 
+\backslash
+mathbf{y},
+\backslash
+mathbf{X} &
+\backslash
+sim 
+\backslash
+mathrm{Inv-}
+\backslash
+chi^2(n-p,s^2)
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+end{align*}
+\end_layout
+
+\begin_layout Plain Layout
+
+		$
+\backslash
+hat
+\backslash
+bbeta
+\backslash
+equiv (
+\backslash
+mathbf{X}^
+\backslash
+top
+\backslash
+mathbf{X})^{-1}
+\backslash
+mathbf{X}^
+\backslash
+top 
+\backslash
+mathbf{y}$ 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+		$s^2
+\backslash
+equiv(
+\backslash
+mathbf{y}-
+\backslash
+mathbf{X}
+\backslash
+hat
+\backslash
+bbeta)^
+\backslash
+top(
+\backslash
+mathbf{y}-
+\backslash
+mathbf{X}
+\backslash
+hat
+\backslash
+bbeta)/(n-p)$ 
+\backslash
+vspace{0.2cm} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+textbf{Marginal posterior}: $$
+\backslash
+boldsymbol{
+\backslash
+beta}|
+\backslash
+mathbf{y}
+\backslash
+sim t_{n-k}
+\backslash
+left(
+\backslash
+hat{
+\backslash
+boldsymbol{
+\backslash
+beta}},s^{2}(
+\backslash
+mathbf{X}^{
+\backslash
+top}
+\backslash
+mathbf{X})^{-1}
+\backslash
+right)$$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{tcolorbox}   
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+label{fig:linregnoninfoupdating} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Linear regression - conjugate prior
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Joint prior
+\color orange
+ 
+\series default
+\color inherit
+for 
+\begin_inset Formula $\boldsymbol{\beta}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\boldsymbol{\beta}|\sigma^{2} & \sim N\left(\mu_{0},\sigma^{2}\boldsymbol{\Omega}_{0}^{-1}\right)\\
+\sigma^{2} & \sim\mathrm{Inv-}\chi^{2}\left(\nu_{0},\sigma_{0}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Common choices: 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{\Omega}_{0}=\kappa\boldsymbol{I}_{p}$
+\end_inset
+
+ (
+\series bold
+\color blue
+Ridge
+\series default
+\color inherit
+)
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{\Omega}_{0}=\frac{\kappa}{n}\boldsymbol{X}^{\top}\boldsymbol{X}$
+\end_inset
+
+ (
+\series bold
+\color blue
+Zellner's prior
+\series default
+\color inherit
+).
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{\Omega}_{0}=\frac{1}{n}\boldsymbol{X}^{\top}\boldsymbol{X}$
+\end_inset
+
+ (Noninformative
+\series bold
+\color blue
+ Unit information prior
+\series default
+\color inherit
+) 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Posterior in linear regression - conjugate prior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}   
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{tcolorbox}[colback=verylightgray]     
+\backslash
+textbf{
+\backslash
+textcolor{darkgreen}{Gaussian linear regression with conjugate prior}} 
+ 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+		 
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+textbf{Model}:
+\backslash
+hspace{0.5cm} $
+\backslash
+mathbf{y} = 
+\backslash
+mathbf{X}
+\backslash
+bbeta + 
+\backslash
+boldsymbol{
+\backslash
+varepsilon},
+\backslash
+quad 
+\backslash
+v
+\backslash
+varepsilon 
+\backslash
+overset{iid}{
+\backslash
+sim}
+\backslash
+mathrm{N}(0,
+\backslash
+sigma^2I_n)$ 
+\backslash
+vspace{0.2cm} 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+textbf{Prior}:
+\backslash
+vspace{-0.5cm}  
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+begin{align*}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+bbeta|
+\backslash
+sigma^2 &
+\backslash
+sim N(
+\backslash
+boldsymbol{
+\backslash
+mu}_0,
+\backslash
+sigma^2
+\backslash
+v
+\backslash
+Omega_0^{-1})  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+sigma^2 &
+\backslash
+sim 
+\backslash
+mathrm{Inv-}
+\backslash
+chi^2(
+\backslash
+nu_0,
+\backslash
+sigma_0^2)
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+end{align*}   
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+textbf{Posterior}:
+\backslash
+vspace{-0.7cm}  
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+begin{align*}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+bbeta | 
+\backslash
+sigma^2, 
+\backslash
+mathbf{y},
+\backslash
+mathbf{X} &
+\backslash
+sim      
+\backslash
+mathrm{N}(
+\backslash
+v
+\backslash
+mu_n,
+\backslash
+sigma^2
+\backslash
+v
+\backslash
+Omega_n^{-1}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+sigma^2 | 
+\backslash
+mathbf{y},
+\backslash
+mathbf{X} &
+\backslash
+sim 
+\backslash
+mathrm{Inv-}
+\backslash
+chi^2(
+\backslash
+nu_n,
+\backslash
+sigma_n^2)
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+end{align*}           
+\end_layout
+
+\begin_layout Plain Layout
+
+		$
+\backslash
+v
+\backslash
+Omega_n = 
+\backslash
+mathbf{X}^
+\backslash
+top
+\backslash
+mathbf{X} + 
+\backslash
+v
+\backslash
+Omega_0$, 
+\backslash
+
+\backslash
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+		$
+\backslash
+v
+\backslash
+mu_n = 
+\backslash
+big(
+\backslash
+v
+\backslash
+Omega_n^{-1}
+\backslash
+*X^
+\backslash
+top
+\backslash
+*X
+\backslash
+big) 
+\backslash
+hat
+\backslash
+bbeta + 
+\backslash
+v
+\backslash
+Omega_n^{-1}
+\backslash
+v
+\backslash
+Omega_0
+\backslash
+v
+\backslash
+mu_0$ 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+		$
+\backslash
+nu_n = 
+\backslash
+nu_0 + n$ 
+\backslash
+vspace{0.5cm} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+textbf{Marginal posterior}: $
+\backslash
+bbeta|
+\backslash
+*y 
+\backslash
+sim t_{
+\backslash
+nu_n}
+\backslash
+big(
+\backslash
+v
+\backslash
+mu_n,
+\backslash
+sigma_n^2
+\backslash
+v
+\backslash
+Omega_n^{-1} 
+\backslash
+big)$   
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{tcolorbox}   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Julia code for linear regression - conjugate prior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figs/linreg_julia.png
+	lyxscale 50
+	scale 17
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+R for linear regression - conjugate prior
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figs/linreg_R.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bike share data
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bike share data
+\series default
+\color inherit
+.
+ Predict the number of bike rides.
+\end_layout
+
+\begin_layout Itemize
+Response variable: number of rides on 
+\begin_inset Formula $731$
+\end_inset
+
+ days.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+small 
+\backslash
+begin{table}   
+\backslash
+small   
+\backslash
+center   
+\backslash
+begin{tabular}{l|r|r|r|r}     
+\backslash
+hline      
+\backslash
+cellcolor{lightgray} variable & 
+\backslash
+cellcolor{lightgray} 
+\backslash
+centering{description} & 
+\backslash
+cellcolor{lightgray}  type & 
+\backslash
+cellcolor{lightgray} values & 
+\backslash
+cellcolor{lightgray}  comment 
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+texttt{nrides} & 
+\backslash
+# of rides & counts & $
+\backslash
+{0,1,...
+\backslash
+}$ & min$=22$, max$=8714$ 
+\backslash
+tabularnewline     
+\backslash
+texttt{feeltemp} & perceived temp & cont.
+ & $[0,1]$ & min$=0.07$, max$=0.85$
+\backslash
+tabularnewline     
+\backslash
+texttt{hum} & humidity & cont.
+ & $[0,1]$ & min$=0.00$, max$=0.98$ 
+\backslash
+tabularnewline     
+\backslash
+texttt{wind} & wind speed & cont.
+ & $[0,1]$ & min$=0.02$, max$=0.51$ 
+\backslash
+tabularnewline     
+\backslash
+texttt{year} & year & binary & $
+\backslash
+{0,1
+\backslash
+}$ & year 2011 $=0$ 
+\backslash
+tabularnewline     
+\backslash
+texttt{season} & season & cat.
+ &  $
+\backslash
+{1,2,3,4
+\backslash
+}$ & winter $
+\backslash
+rightarrow$ fall 
+\backslash
+tabularnewline     
+\backslash
+texttt{weather} & weather & ordinal & $
+\backslash
+{1,2,3
+\backslash
+}$ & clear $
+\backslash
+rightarrow$ rain/snow
+\backslash
+tabularnewline     
+\backslash
+texttt{weekday} & day of week & cat.
+ & $
+\backslash
+{0,...,6
+\backslash
+}$ & sunday $
+\backslash
+rightarrow$ saturday 
+\backslash
+tabularnewline     
+\backslash
+texttt{holiday} & holiday & binary & $
+\backslash
+{0,1
+\backslash
+}$ & holiday $=1$ 
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+hline      
+\backslash
+end{tabular}      
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Prior:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{\mu}_{0}=(1000,0,\ldots,0)^{\top}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{\Omega}_{0}=\frac{\kappa_{0}}{n}\boldsymbol{X}^{\top}\boldsymbol{X}$
+\end_inset
+
+ with 
+\begin_inset Formula $\kappa_{0}=1$
+\end_inset
+
+ (unit information prior)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\sigma_{0}^{2}=1000^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\nu_{0}=5$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bike share data
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/biketimeseries.pdf
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/bikefeeltempbyyear.pdf
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/bikefeeltempbyweather.pdf
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/bikefeeltempbyseason.pdf
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bike share data - marginal posteriors of 
+\begin_inset Formula $\boldsymbol{\beta}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/bikemarginals.pdf
+	lyxscale 40
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Bike share data - joint posteriors of 
+\begin_inset Formula $\boldsymbol{\beta}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/bikebivar1.pdf
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/bikebivar2.pdf
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Interactive - Bayesian regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "1pt"
+separation "1pt"
+shadowsize "4pt"
+framecolor "orange"
+backgroundcolor "white"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+name "\\includegraphics[width=0.55\\textwidth]{figs/regressionscreen.png}"
+target "https://mattiasvillani.com/BayesianLearningBook/observable/bike_lin_reg.html"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Ridge regression = iid normal prior
 \end_layout
 
 \end_inset
@@ -356,13 +1757,40 @@ Likelihood function - Bernoulli trials
 
 \series bold
 \color blue
-Bernoulli trials
-\series default
+Shrinkage
 \color inherit
-:
+/
+\color blue
+regularization
+\color inherit
+ prior 
+\series default
+[
+\begin_inset Formula $\mbox{\ensuremath{\boldsymbol{\Omega}}}_{0}=\lambda\boldsymbol{I}_{p}$
+\end_inset
+
+]
 \begin_inset Formula 
 \[
-X_{1},...,X_{n}|\theta\overset{{\normalcolor {\normalcolor \textcolor{red}{iid}}}}{\sim}Bern(\textcolor{red}{\ensuremath{\theta}}).
+\beta_{i}|\lambda,\sigma^{2}\overset{\mathrm{iid}}{\sim}\mathrm{N}\left(0,\frac{\sigma^{2}}{\lambda}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Posterior mean is the 
+\series bold
+\color blue
+ridge regression
+\series default
+\color inherit
+ estimator
+\begin_inset Formula 
+\[
+\boldsymbol{\mu}_{n}=\left(\mathbf{X}^{\top}\mathbf{X}+\lambda I\right)^{-1}\mathbf{X}^{\top}\mathbf{y}
 \]
 
 \end_inset
@@ -374,23 +1802,30 @@ X_{1},...,X_{n}|\theta\overset{{\normalcolor {\normalcolor \textcolor{red}{iid}}
 
 \series bold
 \color blue
-Likelihood
+Shrinkage
 \series default
 \color inherit
- from 
-\begin_inset Formula $s=\sum_{i=1}^{n}x_{i}$
+ toward zero 
+\begin_inset Formula 
+\[
+\text{As }\lambda\rightarrow\infty,\text{ }\boldsymbol{\mu}_{n}\rightarrow\boldsymbol{0}
+\]
+
 \end_inset
 
- successes and 
-\begin_inset Formula $f=n-s$
+
+\end_layout
+
+\begin_layout Itemize
+When 
+\begin_inset Formula $\mathbf{X}^{\top}\mathbf{X}=\boldsymbol{I}_{p}$
 \end_inset
 
- failures.
  
 \begin_inset Formula 
-\begin{eqnarray*}
-p(x_{1},...,x_{n}|\theta) & = & p(x_{1}|\theta)\cdots p(x_{n}|\theta)=\theta^{s}(1-\theta)^{f}
-\end{eqnarray*}
+\[
+\boldsymbol{\mu}_{n}=(1-\phi)\hat{\boldsymbol{\beta}},\qquad\text{for }\phi=\frac{\lambda}{1+\lambda}
+\]
 
 \end_inset
 
@@ -401,51 +1836,328 @@ p(x_{1},...,x_{n}|\theta) & = & p(x_{1}|\theta)\cdots p(x_{n}|\theta)=\theta^{s}
 
 \series bold
 \color blue
-Maximum likelihood estimator
+Shrinkage factor
 \series default
 \color inherit
  
-\begin_inset Formula $\hat{\theta}$
+\begin_inset Formula $\phi\in[0,1].$
 \end_inset
 
- maximizes 
-\begin_inset Formula $p(x_{1},...,x_{n}|\theta)$
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
 \end_inset
 
-.
-\begin_inset VSpace bigskip
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Lasso regression = Laplace prior
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Lasso
+\series default
+\color inherit
+ is equivalent to posterior mode under Laplace prior
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\[
+\beta_{i}|\lambda,\sigma^{2}\overset{\mathrm{iid}}{\sim}\mathrm{\mathrm{Laplace}}\left(0,\frac{\sigma^{2}}{\lambda}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/laplacedist.png
+	lyxscale 60
+	scale 15
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/mv/Dropbox/BayesBook/Figs/laplace.png
+	lyxscale 50
+	scale 15
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Itemize
-Given the data 
-\begin_inset Formula $x_{1},...,x_{n}$
-\end_inset
 
-, plot 
-\begin_inset Formula $p(x_{1},...,x_{n}|\theta)$
-\end_inset
-
- 
-\color red
-as a function of 
-\begin_inset Formula $\theta$
-\end_inset
-
-
+\series bold
+\color blue
+Laplace prior
+\series default
 \color inherit
+:
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+heavy tails
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+many 
+\begin_inset Formula $\beta_{i}$
+\end_inset
+
+ close to zero, but some 
+\begin_inset Formula $\beta_{i}$
+\end_inset
+
+ can be very large.
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Normal prior
+\series default
+\color inherit
+:
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+light tails
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+all 
+\begin_inset Formula $\beta_{i}$
+\end_inset
+
+'s are similar in magnitude and no 
+\begin_inset Formula $\beta_{i}$
+\end_inset
+
+ very large.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Interactive - tails of distributions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "1pt"
+separation "1pt"
+shadowsize "4pt"
+framecolor "orange"
+backgroundcolor "white"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+name "\\includegraphics[width=0.55\\textwidth]{figs/tails_widget.png}"
+target "https://observablehq.com/@mattiasvillani/distribution-of-the-maximum#anchor"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Horseshoe prior
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Normal and Laplace - one 
+\series bold
+\color blue
+global shrinkage
+\series default
+\color inherit
+ parameter 
+\begin_inset Formula $\lambda$
+\end_inset
+
 .
-\begin_inset Newline newline
+\begin_inset VSpace smallskip
 \end_inset
 
 
-\begin_inset VSpace bigskip
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Global-Local shrinkage
+\series default
+\color inherit
+: global + local shrinkage for each 
+\begin_inset Formula $\beta_{j}.$
 \end_inset
 
 
-\begin_inset VSpace medskip
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Horseshoe
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+prior
+\series default
+\color inherit
+:
+\size footnotesize
+
+\begin_inset Formula 
+\begin{align*}
+\beta_{j}\vert\lambda_{j}^{2},\tau^{2} & \overset{\mathrm{ind}}{\sim}N\left(0,\sigma^{2}\tau^{2}\lambda_{j}^{2}\right)\\
+\lambda_{j} & \sim C^{+}(0,1)\\
+\tau & \sim C^{+}(0,1)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The posterior mean for 
+\begin_inset Formula $\boldsymbol{\beta}$
+\end_inset
+
+ satisfies approximately
+\size footnotesize
+
+\begin_inset Formula 
+\[
+\mu_{n,j}\approx(1-\phi_{j})\hat{\beta}_{j}
+\]
+
 \end_inset
 
 
@@ -454,25 +2166,112 @@ as a function of
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/BernLiken10s4.pdf
-	lyxscale 40
-	scale 17
+	filename /home/mv/Dropbox/Teaching/Guest/KTH_BayesReg/horseshoe_vs_normal.pdf
+	lyxscale 30
+	scale 20
 
 \end_inset
 
 
-\begin_inset Graphics
-	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/BernLiken100s40.pdf
-	lyxscale 40
-	scale 17
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Variable selection by spike-and-slab prior
+\end_layout
 
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Spike-and-slab prior
+\series default
+\size footnotesize
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+\beta_{j}\vert\sigma^{2},\tau^{2},z_{j} & \sim\begin{cases}
+0 & \text{if }z_{j}=0\\
+N\left(0,\sigma^{2}\tau^{2}\right) & \text{if }z_{j}=1
+\end{cases}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Prior for the 
+\series bold
+\color blue
+variable selection indicators
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+z_{j}\overset{iid}{\sim}\mathrm{Bernoulli}(\omega)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This is a 
+\series bold
+\color blue
+mixture prior
+\series default
+\color inherit
+ for the 
+\begin_inset Formula $\beta_{j}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p(\beta_{j})=(1-\pi)\delta_{0}(\beta_{j})+(1-\pi)N(\beta_{j}\vert0,\sigma^{2}\tau^{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Graphics
-	filename /home/mv/Dropbox/Teaching/BayesLearning/Slides/Images/BernLiken10s9.pdf
-	lyxscale 40
-	scale 17
+	filename /home/mv/Dropbox/BayesBook/Figs/SpikeAndSlabPrior.pdf
+	lyxscale 30
+	scale 25
 
 \end_inset
 
