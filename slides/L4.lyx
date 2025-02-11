@@ -1181,6 +1181,72 @@ status open
 
 \series bold
 \color orange
+Normal posterior approx for logistic regression - Julia
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename figs/logistic_reg_julia.png
+	lyxscale 40
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bayesian logistic regression in 
+\series bold
+\color blue
+R
+\series default
+\color inherit
+: 
+\bar under
+\color blue
+
+\begin_inset CommandInset href
+LatexCommand href
+name "R notebook"
+target "https://mattiasvillani.com/BayesianLearningBook/notebooks/SpamLogisticReg/SpamLogisticReg.html"
+literal "false"
+
+\end_inset
+
+
+\bar default
+\color inherit
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
 \begin_inset Graphics
 	filename /home/mv/Dropbox/Teaching/STM/misc/observable_o_logo.svg
 	scale 30
