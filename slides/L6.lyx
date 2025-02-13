@@ -275,8 +275,522 @@ Overview
 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Probabilistic programming 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Turing
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Stan
+\end_layout
+
+\end_deeper
 \begin_layout Standard
-\begin_inset Separator plain
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Probabilistic programming languages for Bayes
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Stan
+\color inherit
+ 
+\series default
+is a probabilistic programming language for Bayes based on HMC.
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+C++ using the R package 
+\family typewriter
+rstan
+\family default
+.
+ Bindings from Python.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../BayesLearning/Slides/Images/stan_logo.png
+	lyxscale 30
+	scale 10
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Turing.jl
+\color inherit
+ 
+\series default
+is a probabilistic programming language in Julia.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Written in 
+\family typewriter
+Julia
+\family default
+, which is fast natively.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../BayesLearning/Slides/Images/turinglogo.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+HMC sampling for iid normal model in rstan
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../Seminars/CEDASBergen2023/figs/stannormal.png
+	lyxscale 40
+	scale 22
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+HMC sampling for iid normal model in Turing.jl
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../Seminars/CEDASBergen2023/figs/turingnormal.png
+	lyxscale 40
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Modeling the number of bidders in eBay auctions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../Seminars/CEDASBergen2023/figs/ebaydatatable.png
+	lyxscale 40
+	scale 22
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Poisson regression
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+y_{i}\vert\boldsymbol{x}_{i} & \sim\mathrm{Poisson}(\lambda_{i})\\
+\lambda_{i} & =\exp(\boldsymbol{x}_{i}^{\top}\boldsymbol{\beta})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+HMC sampling for Poisson regression in Turing.jl
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../Seminars/CEDASBergen2023/figs/poissonTuring.png
+	lyxscale 40
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+\color blue
+\begin_inset CommandInset href
+LatexCommand href
+name "Poisson regression"
+target "https://rpubs.com/kaz_yos/stan-pois1"
+literal "false"
+
+\end_inset
+
+
+\bar default
+\color inherit
+ in rstan.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+...
+ or TuringGLM.jl with R's formula syntax
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../Seminars/CEDASBergen2023/figs/TuringGLMPoissonReg.png
+	lyxscale 40
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Inspired by the 
+\bar under
+\color blue
+
+\begin_inset CommandInset href
+LatexCommand href
+name "brms"
+target "https://cran.r-project.org/web/packages/brms/index.html"
+literal "false"
+
+\end_inset
+
+
+\bar default
+\color inherit
+ package in R.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Marginal posteriors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Multiplicative model
+\begin_inset Formula 
+\[
+E(y\vert\boldsymbol{x})=\exp(\beta_{0}+\beta_{1}x_{1}+\beta_{2}x_{2})=\exp(\beta_{0})\exp(\beta_{1})^{x_{1}}\exp(\beta_{2})^{x_{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../Seminars/CEDASBergen2023/figs/ebay_post_meanratio_vs_hmc.pdf
+	lyxscale 40
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\color orange
+Negative binomial regression in Turing.jl
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Negative binomial regression
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+y_{i}\vert\boldsymbol{x}_{i} & \sim\mathrm{NegBinomial}\left(\psi,p=\frac{\psi}{\psi+\lambda_{i}}\right),\quad\lambda_{i}=\exp(\boldsymbol{x}_{i}^{\top}\boldsymbol{\beta})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Mean is still 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+, but variance is larger: 
+\begin_inset Formula $Var(y_{i})=\lambda_{i}(1+\lambda_{i}/\psi)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+As 
+\begin_inset Formula $\psi\rightarrow\infty$
+\end_inset
+
+ we get Poisson again.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../Seminars/CEDASBergen2023/figs/negbinregTuring.png
+	lyxscale 40
+	scale 33
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../../../Seminars/CEDASBergen2023/figs/ebay_negbin_overdispersion.pdf
+	lyxscale 40
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
 \end_inset
 
 
@@ -299,11 +813,29 @@ Regression with horseshoe in Turing.jl
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Horseshoe
+\series default
+\color inherit
+ prior
+\begin_inset Formula 
+\[
+\beta_{j}\vert\lambda_{j}^{2},\tau^{2}\overset{\mathrm{ind}}{\sim}N\left(0,\sigma^{2}\tau^{2}\lambda_{j}^{2}\right)\qquad\lambda_{j}\sim C^{+}(0,1)\qquad\tau\sim C^{+}(0,1)
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename figs/reg_horseshoe_turing.png
-	scale 24
+	scale 21
 
 \end_inset
 

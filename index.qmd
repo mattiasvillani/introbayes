@@ -85,8 +85,7 @@ Notebook: Logistic regression Titanic data in R:  [html](https://mattiasvillani.
 
 **Lecture 5 - Introduction to Gibbs sampling, MCMC and HMC**<br> 
 Time: 14.00-14.50 <br>
-Reading: Ch. 9 and Ch. 10 (very incomplete) | Slides<br>
-Data: [fossil data for nonlinear regression](https://github.com/mattiasvillani/introbayes/raw/main/data/fossil.csv)<br>
+Reading: Ch. 9 and Ch. 10 (very incomplete) | [Bayesian Data Analysis Ch. 10-11 and 12.4](https://sites.stat.columbia.edu/gelman/book/BDA3.pdf) | [Slides](slides/L5.pdf)<br>
 Videos: [Gibbs sampling when parameters are very correlated](https://www.youtube.com/watch?v=IGiQOCX9UbM&ab_channel=Red15) | [Metropolis-Hastings vs HMC](https://www.youtube.com/watch?v=Vv3f0QNWvWQ&ab_channel=DavidDuvenaud)
 
 ☕ *coffee*
@@ -94,7 +93,7 @@ Videos: [Gibbs sampling when parameters are very correlated](https://www.youtube
 **Lecture 6 - Implementing Bayesian Learning with Probabilistic Programming**<br> 
 Time: 15.10-16.00 <br>
 Reading: Ch. 1, 2.1-2.4 | Slides<br> 
-Notebooks: Polynomial regresssion for fossil data in Rstan [html](https://mattiasvillani.com/BayesianLearningBook/notebooks/FossilNonlinearReg/FossilPolyRegStan.html) and [quarto](https://github.com/mattiasvillani/BayesianLearningBook/raw/main/notebooks/FossilNonlinearReg/FossilPolyRegStan.qmd)
+Notebooks: Polynomial regression for fossil data in Rstan [html](https://mattiasvillani.com/BayesianLearningBook/notebooks/FossilNonlinearReg/FossilPolyRegStan.html) and [quarto](https://github.com/mattiasvillani/BayesianLearningBook/raw/main/notebooks/FossilNonlinearReg/FossilPolyRegStan.qmd)
 
 ### Extras <a name="extras"></a>
 
