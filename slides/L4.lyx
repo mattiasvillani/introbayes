@@ -988,7 +988,7 @@ status open
 
 \series bold
 \color orange
-Numerical Normal approximation of posterior
+Numerical normal approximation of posterior
 \end_layout
 
 \end_inset
@@ -1005,10 +1005,10 @@ Numerical Normal approximation of posterior
 Standard 
 \series bold
 \color blue
-optimization routines
+numerical optimization
 \series default
 \color inherit
- may be used to obtain the normal approximation (e.g.
+ (e.g.
  
 \family typewriter
 optim in 
@@ -1033,13 +1033,13 @@ R).
 Input
 \series default
 \color inherit
-: expression proportional to 
-\begin_inset Formula $\log p(\boldsymbol{\theta}|\mathbf{x})$
+: function computing 
+\begin_inset Formula $\log p(\mathbf{x}\vert\boldsymbol{\theta})+\log p(\boldsymbol{\theta})$
 \end_inset
 
 .
  Initial values.
-\begin_inset VSpace smallskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -1053,10 +1053,6 @@ Output
 \series default
 \color inherit
 : 
-\begin_inset Formula $\log p(\tilde{\boldsymbol{\theta}}|\mathbf{x})$
-\end_inset
-
-, 
 \begin_inset Formula $\tilde{\boldsymbol{\theta}}$
 \end_inset
 
@@ -1128,7 +1124,7 @@ If
 \end_inset
 
 , use 
-\begin_inset Formula $\phi=\ln[\theta/(1-\theta)]$
+\begin_inset Formula $\phi=\log[\theta/(1-\theta)]$
 \end_inset
 
 .

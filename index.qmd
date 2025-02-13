@@ -80,6 +80,7 @@ Notebook: Logistic regression Titanic data in R:  [html](https://mattiasvillani.
 **Lecture 5 - Introduction to Gibbs sampling, MCMC and HMC**<br> 
 Time: 14.00-14.50 <br>
 Reading: Ch. 9 and Ch. 10 (very incomplete) | Slides<br>
+Data: [fossil data for nonlinear regression](https://github.com/mattiasvillani/introbayes/raw/main/data/fossil.csv)<br>
 Videos: [Gibbs sampling when parameters are very correlated](https://www.youtube.com/watch?v=IGiQOCX9UbM&ab_channel=Red15) | [Metropolis-Hastings vs HMC](https://www.youtube.com/watch?v=Vv3f0QNWvWQ&ab_channel=DavidDuvenaud)
 
 ☕ *coffee*
@@ -87,6 +88,7 @@ Videos: [Gibbs sampling when parameters are very correlated](https://www.youtube
 **Lecture 6 - Implementing Bayesian Learning with Probabilistic Programming**<br> 
 Time: 15.10-16.00 <br>
 Reading: Ch. 1, 2.1-2.4 | Slides<br> 
+Notebooks: Polynomial regresssion for fossil data in Rstan [html](https://mattiasvillani.com/BayesianLearningBook/notebooks/FossilNonLinReg/FossilPolyReg.html) and [qmd](https://mattiasvillani.com/BayesianLearningBook/notebooks/FossilNonLinReg/FossilPolyReg.qmd)
 
 ### Extras <a name="extras"></a>
 
@@ -101,11 +103,11 @@ Interactive: [Bayes' theorem for events](https://observablehq.com/@mattiasvillan
 ##### R and RStan
 <img src="misc/R.png" width="25"> [Install R](https://cran.r-project.org/bin/)<br>
 <img src="misc/RStudio.png" width="25"> [Install RStudio](https://posit.co/download/rstudio-desktop/)<br>
-<img src="misc/rstan.png" width="25"> [Install RStan](https://github.com/stan-dev/rstan/wiki/Rstan-Getting-Started)
+<img src="misc/rstan.png" width="25"> [Install RStan](https://github.com/stan-dev/rstan/wiki/Rstan-Getting-Started) | [Stan User's guide](https://mc-stan.org/docs/stan-users-guide/)
 
 ##### Julia and Turing
 <img src="misc/julialogo.svg" width="25"> [Install Julia](https://julialang.org/downloads/)<br>
 <img src="misc/vscodeicon.png" width="25"> [Install VS Code](https://code.visualstudio.com/)<br>
 <img src="misc/vsjulia.png" width="25"> [Install Julia extension for VS Code](https://code.visualstudio.com/docs/languages/julia) | [Guided Youtube video](https://www.youtube.com/watch?v=FcgIvWb7gO0&ab_channel=doggodotjl)<br>
-<img src="misc/turinglogo.jpg" width="25"> [Install and get started with Turing.jl](https://turing.ml/v0.22/docs/using-turing/get-started)
+<img src="misc/turinglogo.jpg" width="25"> [Install and get started with Turing.jl](https://turing.ml/v0.22/docs/using-turing/get-started) | [Turing tutorials](https://turing.ml/v0.22/tutorials/)
 
