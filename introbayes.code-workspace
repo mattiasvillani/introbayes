@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "code/Turing"
+		}
+	],
+	"settings": {
+		"jupyter.jupyterServerType": "local",
+		"workbench.colorCustomizations": {
+			"[Atom One Light]": {
+				"titleBar.activeBackground": "#0b1014",
+				"statusBar.background": "#1cd2df",
+				"statusBar.foreground": "#222425",
+			}
+		
+		}
+	},
+}

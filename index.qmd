@@ -74,12 +74,13 @@ Interactive: [Linear regression](https://observablehq.com/@mattiasvillani/bayesi
 **Lecture 4 - Bayesian Classification and Posterior Approximation**<br> 
 Time: 13.00-13.50 <br>
 Reading: Ch. 7 and Ch. 8 | [Slides](slides/L4.pdf)<br>
+Interactive: [Beta regression for proportions](https://observablehq.com/@mattiasvillani/posterior-approximation-beta-model)<br>
 Notebook: Logistic regression Titanic data in R:  [html](https://mattiasvillani.com/BayesianLearningBook/notebooks/TitanicLogistic/TitanicLogistic.html) and [quarto](https://github.com/mattiasvillani/BayesianLearningBook/raw/main/notebooks/TitanicLogistic/TitanicLogistic.qmd)
 
 **Lecture 5 - Introduction to Gibbs sampling, MCMC and HMC**<br> 
 Time: 14.00-14.50 <br>
 Reading: Ch. 9 and Ch. 10 (very incomplete) | Slides<br>
-Interactive: [Gibbs sampling when parameters are very correlated](https://www.youtube.com/watch?v=IGiQOCX9UbM&ab_channel=Red15) | [Metropolis-Hastings vs HMC](https://www.youtube.com/watch?v=Vv3f0QNWvWQ&ab_channel=DavidDuvenaud)
+Videos: [Gibbs sampling when parameters are very correlated](https://www.youtube.com/watch?v=IGiQOCX9UbM&ab_channel=Red15) | [Metropolis-Hastings vs HMC](https://www.youtube.com/watch?v=Vv3f0QNWvWQ&ab_channel=DavidDuvenaud)
 
 ☕ *coffee*
 
@@ -93,4 +94,18 @@ Interactive: [Bayes' theorem for events](https://observablehq.com/@mattiasvillan
 [Frequentist coverage of credible intervals](https://observablehq.com/@mattiasvillani/coverage-of-confidence-intervals-for-a-proportion) | 
 [Normal approximation for Beta model](https://observablehq.com/@mattiasvillani/posterior-approximation-beta-model) |
 [Bayesian hypothesis testing](https://observablehq.com/@mattiasvillani/bayesian-test-mean-normal-pop)
+
+
+### Computing
+
+##### R and RStan
+<img src="misc/R.png" width="25"> [Install R](https://cran.r-project.org/bin/)<br>
+<img src="misc/RStudio.png" width="25"> [Install RStudio](https://posit.co/download/rstudio-desktop/)<br>
+<img src="misc/rstan.png" width="25"> [Install RStan](https://github.com/stan-dev/rstan/wiki/Rstan-Getting-Started)
+
+##### Julia and Turing
+<img src="misc/julialogo.svg" width="25"> [Install Julia](https://julialang.org/downloads/)<br>
+<img src="misc/vscodeicon.png" width="25"> [Install VS Code](https://code.visualstudio.com/)<br>
+<img src="misc/vsjulia.png" width="25"> [Install Julia extension for VS Code](https://code.visualstudio.com/docs/languages/julia) | [Guided Youtube video](https://www.youtube.com/watch?v=FcgIvWb7gO0&ab_channel=doggodotjl)<br>
+<img src="misc/turinglogo.jpg" width="25"> [Install and get started with Turing.jl](https://turing.ml/v0.22/docs/using-turing/get-started)
 

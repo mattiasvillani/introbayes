@@ -8,3 +8,4 @@ docs/hidden
 .$*
 *.lyx#
 *.lyx~
+_freeze*.*
