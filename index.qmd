@@ -6,7 +6,13 @@ editor:
     wrap: 72
 ---
 
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
 <img src="misc/banner_image1.png" alt="AI generated banner image" class="center" width="100%"/>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/mattiasvillani/introbayes" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star mattiasvillani/introbayes on GitHub">Star</a>
 
 ### Aim
 
@@ -88,7 +94,7 @@ Videos: [Gibbs sampling when parameters are very correlated](https://www.youtube
 **Lecture 6 - Implementing Bayesian Learning with Probabilistic Programming**<br> 
 Time: 15.10-16.00 <br>
 Reading: Ch. 1, 2.1-2.4 | Slides<br> 
-Notebooks: Polynomial regresssion for fossil data in Rstan [html](https://mattiasvillani.com/BayesianLearningBook/notebooks/FossilNonLinReg/FossilPolyReg.html) and [qmd](https://mattiasvillani.com/BayesianLearningBook/notebooks/FossilNonLinReg/FossilPolyReg.qmd)
+Notebooks: Polynomial regresssion for fossil data in Rstan [html](https://mattiasvillani.com/BayesianLearningBook/notebooks/FossilNonLinReg/FossilPolyRegStan.html) and [qmd](https://mattiasvillani.com/BayesianLearningBook/notebooks/FossilNonLinReg/FossilPolyRegStan.qmd)
 
 ### Extras <a name="extras"></a>
 
