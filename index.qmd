@@ -94,7 +94,7 @@ Videos: [Gibbs sampling when parameters are very correlated](https://www.youtube
 **Lecture 6 - Implementing Bayesian Learning with Probabilistic Programming**<br> 
 Time: 15.10-16.00 <br>
 Reading: Ch. 1, 2.1-2.4 | Slides<br> 
-Notebooks: Polynomial regresssion for fossil data in Rstan [html](https://mattiasvillani.com/BayesianLearningBook/notebooks/FossilNonLinReg/FossilPolyRegStan.html) and [qmd](https://github.com/mattiasvillani/BayesianLearningBook/raw/main/notebooks/FossilNonlinearReg/FossilPolyRegStan.qmd)
+Notebooks: Polynomial regresssion for fossil data in Rstan [html](https://mattiasvillani.com/BayesianLearningBook/notebooks/FossilNonlinearReg/FossilPolyRegStan.html) and [quarto](https://github.com/mattiasvillani/BayesianLearningBook/raw/main/notebooks/FossilNonlinearReg/FossilPolyRegStan.qmd)
 
 ### Extras <a name="extras"></a>
 
