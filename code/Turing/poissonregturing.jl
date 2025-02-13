@@ -1,4 +1,4 @@
-using Turing, CSV, Downloads, DataFrames, LinearAlgebra, LaTeXStrings, Plots
+using Turing, CSV, Downloads, DataFrames, LinearAlgebra, LaTeXStrings, Plots, KernelDensity
 
 # Reading and transforming the eBay data
 url = "https://github.com/mattiasvillani/BayesianLearningBook/raw/main/data/ebaybids/ebaybids.csv" 
@@ -7,9 +7,7 @@ df = DataFrame(csvFile)
 n = size(df,1)
 describe(df)
 y = df[!,:NBidders]
-X = [ones(n,1) log.(df.BookVal) .- mean(log.(df.BookVal)) 
-    df.ReservePriceFrac .- mean(df.ReservePriceFrac) df.MinorBlem df.MajorBlem 
-    df.NegFeedback df.PowerSeller df.IDSeller df.Sealed]
+X = [ones(n,1) log.(df.BookVal) .- mean(log.(df.BookVal)) df.ReservePriceFrac .- mean(df.ReservePriceFrac) df.MinorBlem df.MajorBlem df.NegFeedback df.PowerSeller df.IDSeller df.Sealed]
 
 varnames = ["intercept", "logbook", "startprice", "minblemish", "majblemish",    
       "negfeedback", "powerseller", "verified", "sealed"]
@@ -32,17 +30,17 @@ p = size(X, 2)
 α = 0.70        # target acceptance probability in NUTS sampler
 model = poissonReg(y, X, τ)
 chain = sample(model, Turing.NUTS(α), 10000, discard_initial = 1000)
-meanratio_samples = exp.(chain.value)
+odds_samples_hmc = exp.(chain.value)
 
 h = []
 for i = 1:p
-    ptmp = histogram(meanratio_samples[:,i], nbins = 50, linecolor = nothing, 
-        normalize = true, title = varnames[i], xlab = L"\exp(\beta_{%$(i-1)})", 
-        yaxis = false, fillopacity = 0.5)    
+    ptmp = histogram(odds_samples_hmc[:,i], nbins = 50,
+        linecolor = nothing, normalize = true, title = varnames[i], 
+        xlab = L"\exp(\beta_{%$(i-1)})", 
+        yaxis = false, fillopacity = 0.5, label ="")    
     push!(h, ptmp)
 end
 plot(h..., size = (600,600), legend = :right)
-
 
 # Variational inference assuming posterior is independent normals
 nSamples = 10
@@ -51,7 +49,14 @@ approx_post = vi(model, ADVI(nSamples, nGradSteps))
 approx_post.dist.m # mean of variational approximation
 approx_post.dist.σ # stdev of variational approximation
 βsample = rand(approx_post, 10000)
-expβvi = exp.(βsample)'
+odds_samples_vi = exp.(βsample)'
+
+for i = 1:p
+    kdefit = kde(odds_samples[:,i])
+    if i == 1 tmp_label = "MFVI " else tmp_label = "" end
+    ptmp = plot!(h[i], kdefit.x, kdefit.density, linecolor = :red, label = tmp_label)    
+end
+plot(h..., size = (600,600), legend = :right)
 
 
 # Negative binomial regression 
@@ -71,4 +76,14 @@ end
 α = 0.70  # target acceptance probability in NUTS sampler
 model = negbinomialReg(y, X, τ, μ₀, σ₀)
 chain = sample(model, Turing.NUTS(α), 10000, discard_initial = 1000)
-meanratio_samples = exp.(chain.value)
+odds_samples_negbin = exp.(chain.value)
+
+for i = 1:p
+    kdefit = kde(odds_samples_negbin[:,i])
+    if i == 1 tmp_label = "Negative binomial " else tmp_label = "" end
+    ptmp = plot!(h[i], kdefit.x, kdefit.density, linecolor = :black, 
+        label = tmp_label)    
+end
+plot(h..., size = (600,600), legend = :right)
+
+histogram(odds_samples_negbin[:,end])
