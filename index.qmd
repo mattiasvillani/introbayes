@@ -95,7 +95,7 @@ Videos: [Gibbs sampling when parameters are very correlated](https://www.youtube
 Time: 15.10-16.00 <br>
 Reading: Ch. 1, 2.1-2.4 | [Slides](slides/L6.pdf)<br> 
 Notebooks: Polynomial regression for fossil data in Rstan [html](https://mattiasvillani.com/BayesianLearningBook/notebooks/FossilNonlinearReg/FossilPolyRegStan.html) and [quarto](https://github.com/mattiasvillani/BayesianLearningBook/raw/main/notebooks/FossilNonlinearReg/FossilPolyRegStan.qmd)<br>
-Code: Getting started with Turing.jl: [instructions](code/Turing/turing_instructions.qmd) and [zip file with code](/code/turing.zip) | [Survival analysis in Stan](https://mc-stan.org/docs/stan-users-guide/truncation-censoring.html)
+Code: Getting started with Turing.jl: [instructions and code](code/Turing/turing_instructions.qmd) | [Survival analysis in Stan](https://mc-stan.org/docs/stan-users-guide/truncation-censoring.html)
 
 ### Extras <a name="extras"></a>
 
