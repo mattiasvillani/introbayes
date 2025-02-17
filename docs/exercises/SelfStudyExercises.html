@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Mattias Villani">
 
-<title>Intro to Bayes - a one day workshop</title>
+<title>Bayesian statistics workshop - self study exercises</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +24,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -79,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -95,32 +96,26 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sections</h2>
-   
-  <ul>
-  <li><a href="#aim" id="toc-aim" class="nav-link active" data-scroll-target="#aim">Aim</a></li>
-  <li><a href="#lecturer" id="toc-lecturer" class="nav-link" data-scroll-target="#lecturer">Lecturer</a></li>
-  <li><a href="#literature" id="toc-literature" class="nav-link" data-scroll-target="#literature">Literature</a></li>
-  <li><a href="#workshop-plan-and-schedule" id="toc-workshop-plan-and-schedule" class="nav-link" data-scroll-target="#workshop-plan-and-schedule">Workshop plan and schedule</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
-  <li><a href="#extras" id="toc-extras" class="nav-link" data-scroll-target="#extras">Extras </a><a name="extras" class="nav-link" data-scroll-target="undefined"></a></li>
-  <li><a href="#computing" id="toc-computing" class="nav-link" data-scroll-target="#computing">Computing</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Intro to Bayes - a one day workshop</h1>
+<h1 class="title">Bayesian statistics workshop - self study exercises</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mattias Villani </p>
+          </div>
+  </div>
     
   
     
@@ -129,84 +124,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
-<p><img src="misc/banner_image1.png" alt="AI generated banner image" class="center" width="100%"></p>
-<!-- Place this tag where you want the button to render. -->
-<p><a class="github-button" href="https://github.com/mattiasvillani/introbayes" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star mattiasvillani/introbayes on GitHub">Star</a></p>
-<section id="aim" class="level3">
-<h3 class="anchored" data-anchor-id="aim">Aim</h3>
-<p>The aim of this one-day workshop is to introduce:</p>
-<ul>
-<li>the basics of Bayesian statistics though some simple models</li>
-<li>the Bayesian approach to prediction and decision making</li>
-<li>approximation and sampling algorithms for posterior inference</li>
-<li>Bayesian regression and classification</li>
-<li>probabilistic programming in Stan and Turing that will allow the user to tackle serious real-world problems with ease.</li>
-</ul>
-<p>The treatment of each topic will necessarily be more brief than I would like to, but the partipants can dig deeper by:</p>
-<ul>
-<li><p>reading in the book suggested below</p></li>
-<li><p>experiment with the <a href="#extras">extra material</a> provided below</p></li>
-<li><p>follow along in the material for my two courses:</p>
-<ul>
-<li><a href="https://github.com/mattiasvillani/BayesLearnCourse">Bayesian Learning. 7.5 credits</a></li>
-<li><a href="https://github.com/mattiasvillani/AdvBayesLearnCourse">Advanced Bayesian Learning, 8 credits</a></li>
-</ul></li>
-</ul>
-</section>
-<section id="lecturer" class="level3">
-<h3 class="anchored" data-anchor-id="lecturer">Lecturer</h3>
-<p><img src="./misc/villani_foto.jpg" width="15%"><br>
-<a href="https://mattiasvillani.com">Mattias Villani</a><br> Professor of Statistics<br> Stockholm University</p>
-</section>
-<section id="literature" class="level3">
-<h3 class="anchored" data-anchor-id="literature">Literature</h3>
-<ul>
-<li>Villani, M. (2025). <a href="https://github.com/mattiasvillani/BayesianLearningBook/raw/main/pdf/BayesBook.pdf">Bayesian Learning</a> (draft, later chapters are work in progress)</li>
-</ul>
-</section>
-<section id="workshop-plan-and-schedule" class="level3">
-<h3 class="anchored" data-anchor-id="workshop-plan-and-schedule">Workshop plan and schedule</h3>
-<hr>
-<p><strong>Lecture 1 - The Bayesics</strong><br> Time: 9.00-9.50 <br> Reading: Ch. 1, 2.1-2.4 | <a href="slides/L1.pdf">Slides</a> <br> Interactive: <a href="https://observablehq.com/@mattiasvillani/beta-distribution">Beta distribution</a> | <a href="https://observablehq.com/@mattiasvillani/bayesian-inference-for-bernoulli-iid-data">Bernoulli data - beta prior</a> | <a href="https://observablehq.com/@mattiasvillani/bayes-iid-gaussian-known-var">Gaussian known variance</a> | <a href="https://observablehq.com/@mattiasvillani/bayesian-inference-for-iid-poisson-counts">Poisson model</a> | <a href="https://observablehq.com/@mattiasvillani/bayesian-inference-for-exponential-iid-data">Exponential model</a> | <a href="https://observablehq.com/@mattiasvillani/bayesian-credible-intervals">Credible intervals</a></p>
-<p><strong>Lecture 2 - Multi-parameter models, Marginalization, Prior elicitation and Prediction</strong><br> Time: 10.00-10.50 <br> Reading: Ch. 3.1-3.5, Ch.4 and Ch. 6 | <a href="slides/L2.pdf">Slides</a><br> Interactive: <a href="https://observablehq.com/@mattiasvillani/scaled-inverse-chi-2-distribution">Scaled inverse-chi2 distribution</a> | <a href="https://observablehq.com/@mattiasvillani/bayesian-inference-for-gaussian-iid-data">Gaussian model</a> | <a href="https://observablehq.com/@mattiasvillani/dirichlet-distribution">Dirichlet distribution</a> | <a href="https://observablehq.com/@mattiasvillani/multinomial-dirichlet">Multinomial model</a> | <a href="https://observablehq.com/@mattiasvillani/prior_pred_poismodel">Prior predictive Poisson model</a></p>
-<p>☕ <em>coffee</em></p>
-<p><strong>Lecture 3 - Bayesian Regression and Regularization</strong><br> Time: 11.10-12.00 <br> Reading: Ch. 5 and Ch. 12 | <a href="slides/L3.pdf">Slides</a><br> Interactive: <a href="https://observablehq.com/@mattiasvillani/bayesian-linear-regression-bike-share-data">Linear regression</a></p>
-<p>🍲 <em>lunch</em></p>
-<p><strong>Lecture 4 - Bayesian Classification and Posterior Approximation</strong><br> Time: 13.00-13.50 <br> Reading: Ch. 7 and Ch. 8 | <a href="slides/L4.pdf">Slides</a><br> Interactive: <a href="https://observablehq.com/@mattiasvillani/posterior-approximation-beta-model">Beta regression for proportions</a><br> Notebook: Logistic regression Titanic data in R: <a href="https://mattiasvillani.com/BayesianLearningBook/notebooks/TitanicLogistic/TitanicLogistic.html">html</a> and <a href="https://github.com/mattiasvillani/BayesianLearningBook/raw/main/notebooks/TitanicLogistic/TitanicLogistic.qmd">quarto</a></p>
-<p><strong>Lecture 5 - Introduction to Gibbs sampling, MCMC and HMC</strong><br> Time: 14.00-14.50 <br> Reading: Ch. 9 and Ch. 10 (very incomplete) | <a href="https://sites.stat.columbia.edu/gelman/book/BDA3.pdf">Bayesian Data Analysis Ch. 10-11 and 12.4</a> | <a href="slides/L5.pdf">Slides</a><br> Interactive: <a href="https://observablehq.com/@mattiasvillani/random-walk-metropolis">Random walk Metropolis</a> | <a href="https://observablehq.com/@mattiasvillani/hamiltonian-markov-chain-monte-carlo">HMC</a> | <a href="https://observablehq.com/@mattiasvillani/leapfrog-integrator">Leapfrog integrator</a> | <a href="https://observablehq.com/@mattiasvillani/hmc-sampling-from-multi-modal-distributions">HMC on multimodal posterior</a><br> Videos: <a href="https://www.youtube.com/watch?v=IGiQOCX9UbM&amp;ab_channel=Red15">Gibbs sampling when parameters are very correlated</a> | <a href="https://www.youtube.com/watch?v=Vv3f0QNWvWQ&amp;ab_channel=DavidDuvenaud">Metropolis-Hastings vs HMC</a></p>
-<p>☕ <em>coffee</em></p>
-<p><strong>Lecture 6 - Implementing Bayesian Learning with Probabilistic Programming</strong><br> Time: 15.10-16.00 <br> Reading: Ch. 1, 2.1-2.4 | <a href="slides/L6.pdf">Slides</a><br> Notebooks: Polynomial regression for fossil data in Rstan <a href="https://mattiasvillani.com/BayesianLearningBook/notebooks/FossilNonlinearReg/FossilPolyRegStan.html">html</a> and <a href="https://github.com/mattiasvillani/BayesianLearningBook/raw/main/notebooks/FossilNonlinearReg/FossilPolyRegStan.qmd">quarto</a><br> Code: Getting started with Turing.jl: <a href="./code/Turing/turing_instructions.html">instructions and code</a> | <a href="https://mc-stan.org/docs/stan-users-guide/truncation-censoring.html">Survival analysis in Stan</a></p>
-</section>
-<section id="exercises" class="level3">
-<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
-<p>Solutions for each problem can be folded out on the pages below (but try to solve it yourself first!).</p>
-<ul>
-<li><a href="https://mattiasvillani.com/BayesianLearningBook/exercises/ch2solutions.html#exercise-2.1">Exercise 2.1 - Math exercise on the posterior for exponentially distributed data</a></li>
-<li><a href="https://mattiasvillani.com/BayesianLearningBook/exercises/ch2solutions.html#exercise-2.2">Exercise 2.2 - Math and computer exercise on survival data</a></li>
-<li><a href="">Posterior for Weibull - TBA</a></li>
-<li><a href="">Normal posterior approximation for the Weibull survival regression model - TBA</a></li>
-<li><a href="">Stan to sample from the posterior for the Weibull survival regression model - TBA</a></li>
-</ul>
-</section>
-<section id="extras" class="level3">
-<h3 class="anchored" data-anchor-id="extras">Extras <a name="extras"></a></h3>
-<p>Interactive: <a href="https://observablehq.com/collection/@mattiasvillani/bayesian-learning">List of Bayesian learning widgets</a> | <a href="https://observablehq.com/collection/@mattiasvillani/distributions">List of Statistical distributions widgets</a></p>
-</section>
-<section id="computing" class="level3">
-<h3 class="anchored" data-anchor-id="computing">Computing</h3>
-<section id="r-and-rstan" class="level5">
-<h5 class="anchored" data-anchor-id="r-and-rstan">R and RStan</h5>
-<p><img src="misc/R.png" width="25"> <a href="https://cran.r-project.org/bin/">Install R</a><br> <img src="misc/RStudio.png" width="25"> <a href="https://posit.co/download/rstudio-desktop/">Install RStudio</a><br> <img src="misc/rstan.png" width="25"> <a href="https://github.com/stan-dev/rstan/wiki/Rstan-Getting-Started">Install RStan</a> | <a href="https://mc-stan.org/docs/stan-users-guide/">Stan User’s guide</a></p>
-</section>
-<section id="julia-and-turing" class="level5">
-<h5 class="anchored" data-anchor-id="julia-and-turing">Julia and Turing</h5>
-<p><img src="misc/julialogo.svg" width="25"> <a href="https://julialang.org/downloads/">Install Julia</a><br> <img src="misc/vscodeicon.png" width="25"> <a href="https://code.visualstudio.com/">Install VS Code</a><br> <img src="misc/vsjulia.png" width="25"> <a href="https://code.visualstudio.com/docs/languages/julia">Install Julia extension for VS Code</a> | <a href="https://www.youtube.com/watch?v=FcgIvWb7gO0&amp;ab_channel=doggodotjl">Guided Youtube video</a><br> <img src="misc/turinglogo.jpg" width="25"> <a href="https://turing.ml/v0.22/docs/using-turing/get-started">Install and get started with Turing.jl</a> | <a href="https://turing.ml/v0.22/tutorials/">Turing tutorials</a></p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -101,8 +101,8 @@ Code: Getting started with Turing.jl: [instructions and code](code/Turing/turing
 
 Solutions for each problem can be folded out on the pages below (but try to solve it yourself first!).
 
-+ [Math exercise on the posterior for exponentially distributed data]( https://mattiasvillani.com/BayesianLearningBook/exercises/ch2solutions.html#exercise-2.1)
-+ [Math and computer exercise on survival data](https://mattiasvillani.com/BayesianLearningBook/exercises/ch2solutions.html#exercise-2.2)
++ [Exercise 2.1 - Math exercise on the posterior for exponentially distributed data]( https://mattiasvillani.com/BayesianLearningBook/exercises/ch2solutions.html#exercise-2.1)
++ [Exercise 2.2 - Math and computer exercise on survival data](https://mattiasvillani.com/BayesianLearningBook/exercises/ch2solutions.html#exercise-2.2)
 + [Posterior for Weibull - TBA]()
 + [Normal posterior approximation for the Weibull survival regression model - TBA]()
 + [Stan to sample from the posterior for the Weibull survival regression model - TBA]()
