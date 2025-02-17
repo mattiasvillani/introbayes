@@ -97,6 +97,16 @@ Reading: Ch. 1, 2.1-2.4 | [Slides](slides/L6.pdf)<br>
 Notebooks: Polynomial regression for fossil data in Rstan [html](https://mattiasvillani.com/BayesianLearningBook/notebooks/FossilNonlinearReg/FossilPolyRegStan.html) and [quarto](https://github.com/mattiasvillani/BayesianLearningBook/raw/main/notebooks/FossilNonlinearReg/FossilPolyRegStan.qmd)<br>
 Code: Getting started with Turing.jl: [instructions and code](code/Turing/turing_instructions.qmd) | [Survival analysis in Stan](https://mc-stan.org/docs/stan-users-guide/truncation-censoring.html)
 
+### Exercises
+
+Solutions for each problem can be folded out on the pages below (but try to solve it yourself first!).
+
++ [Math exercise on the posterior for exponentially distributed data]( https://mattiasvillani.com/BayesianLearningBook/exercises/ch2solutions.html#exercise-2.1)
++ [Math and computer exercise on survival data](https://mattiasvillani.com/BayesianLearningBook/exercises/ch2solutions.html#exercise-2.2)
++ [Posterior for Weibull - TBA]()
++ [Normal posterior approximation for the Weibull survival regression model - TBA]()
++ [Stan to sample from the posterior for the Weibull survival regression model - TBA]()
+
 ### Extras <a name="extras"></a>
 
 Interactive: [List of Bayesian learning widgets](https://observablehq.com/collection/@mattiasvillani/bayesian-learning) | [List of Statistical distributions widgets](https://observablehq.com/collection/@mattiasvillani/distributions)
