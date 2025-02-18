@@ -106,9 +106,7 @@ Solutions for each problem can be folded out on the pages below (but try to solv
 + [Exercise 2.3 - Computer exercise on Weibull distribution for survival data](https://mattiasvillani.com/BayesianLearningBook/exercises/ch2solutions.html#sec-prob_post_weibull_lung)
 + [Exercise 7.2 - Normal posterior approximation for the Weibull survival model](https://mattiasvillani.com/BayesianLearningBook/exercises/ch7solutions.html#sec-prob_weibullreg_lung_optim)
 + [Exercise 7.3 - Normal posterior approximation for the Weibull survival regression model](https://mattiasvillani.com/BayesianLearningBook/exercises/ch7solutions.html#sec-prob_weibull_lung_optim)
-+ [Stan to sample from the posterior for the Weibull survival regression model - TBA]()
-
-prob_weibullreg_lung_optim.html
++ [Exercise 10.1 - Stan to sample from the posterior for the Weibull survival regression model](https://mattiasvillani.com/BayesianLearningBook/exercises/ch10solutions.html#sec-prob_weibullreg_lung_stan)
 
 ### Extras <a name="extras"></a>
 
